@@ -1,0 +1,41 @@
+div#calificacion{
+    border-radius: 10px 10px;
+    border: 1px solid #d9d9d9c7;
+    width: 600px;
+    height: 300px;
+    background-color: #d9d9d99a;
+  }
+  
+  div.perfil{
+    display: grid;
+    grid-template-columns: 15% 85%;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 20px;
+  }
+  
+  .foto{
+    border-radius: 100%;
+    border: 1px solid gray;
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    background-color: white;
+  }
+  
+  img#foto-usuario{
+    width: 100%;
+    border-radius: 100%;
+  }
+  
+  div.nombre-usuario h2{
+    margin-top: 5px;
+    margin-bottom: 0px;
+  }
+  
+  div.comentario{
+    border-radius: 10px 10px;
+    background-color: white;
+    border: 1px solid gray;
+    color: rgba(0, 0, 0, 0.808);
+  }

@@ -6,4 +6,3 @@ export function Buscador(){
             <button type="button" id="buscar">Buscar!</button>
         </div>
 }
-

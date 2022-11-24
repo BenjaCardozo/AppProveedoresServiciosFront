@@ -6,6 +6,9 @@ import NavBar from "./NavBar";
 import PaginaNoEncontrada from "./pages/PaginaNoEncontrada";
 import Principal from './pages/Principal';
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
 export function App() {
   return (
     <BrowserRouter>

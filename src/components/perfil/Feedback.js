@@ -1,3 +1,5 @@
+import "./Feedback.css";
+
 export function Feedback(){
     return <>
     <div id="calificacion">

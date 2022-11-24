@@ -3,4 +3,5 @@ nav#navegador{
     padding: auto;
     height: 45px;
     border: 1px solid gray;
+    display: flex;
 }

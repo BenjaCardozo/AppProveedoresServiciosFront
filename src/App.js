@@ -8,6 +8,7 @@ import Principal from "./pages/Principal";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import Registro from './pages/Registro';
 
 export function App() {
   return (
@@ -15,7 +16,7 @@ export function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Principal />} />
-        <Route path="/registro" element={<div>about</div>} />
+        <Route path="/registro" element={<Registro />} />
         <Route path="*" element={<PaginaNoEncontrada />} />
       </Routes>
       <Footer />

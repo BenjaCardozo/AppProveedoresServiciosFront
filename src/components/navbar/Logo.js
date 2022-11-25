@@ -1,8 +1,10 @@
 import "./Logo.css";
-export function Logo(){
-    return<>
-        <div class="logo">
-
-        </div>
-    </>
+export function Logo() {
+  return (
+    <div>
+      <div className="logo"></div>
+    </div>
+  );
 }
+
+export default Logo;

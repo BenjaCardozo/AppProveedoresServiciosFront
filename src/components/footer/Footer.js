@@ -1,4 +1,27 @@
-export function redes() {
+
+
+export function Footer() {
+  return (
+    <>
+      <div>
+        <Redes />
+        <EnlacesFooter />
+      </div>
+    </>
+  );
+}
+
+export function EnlacesFooter() {
+  return;
+  <div>
+    <a href="">Términos y condiciones</a>
+    <a href="">Políticas de privacidad</a>
+    <a href="">Condiciones de contratación</a>
+    <a href="">Políticas de gestión de calidad</a>
+  </div>;
+}
+
+export function Redes() {
   return;
   <div class="redesSociales" id="RRSS">
     <i class="bx bxl-facebook">
@@ -24,4 +47,7 @@ export function redes() {
     </i>
   </div>;
   //<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+  
 }
+export default Footer

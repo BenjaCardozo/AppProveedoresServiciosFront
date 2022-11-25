@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Footer = () => {
+function Registro() {
   return (
     <div>
-        
+      
     </div>
   )
 }
 
-export default Footer
+export default Registro

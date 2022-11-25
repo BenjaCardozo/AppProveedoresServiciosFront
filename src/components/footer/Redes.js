@@ -1,25 +1,25 @@
-export function redes() {
+export function Redes() {
   return;
-  <div class="redesSociales" id="RRSS">
-    <i class="bx bxl-facebook">
+  <div className="redesSociales" id="RRSS">
+    <i className="bx bxl-facebook">
       <a href="https://es-la.facebook.com/" target="_blank">
         FACEBOOK
       </a>
     </i>
-    <i class="bx bxl-instagram">
+    <i className="bx bxl-instagram">
       <a href="https://www.instagram.com/" target="_blank">
         INSTAGRAM
       </a>
     </i>
-    <i class="bx bxl-twitter">
+    <i className="bx bxl-twitter">
       <a href="https://twitter.com/" target="_blank">
         TWITTER
       </a>
     </i>
-    <i class="bx bxl-linkedin" id="LinkedIn">
+    <i className="bx bxl-linkedin" id="LinkedIn">
       <a href="https://www.youtube.com/"></a>
     </i>
-    <i class="bx bxl-youtube" id="youtube">
+    <i className="bx bxl-youtube" id="youtube">
       <a href="https://ar.linkedin.com/"></a>
     </i>
   </div>;

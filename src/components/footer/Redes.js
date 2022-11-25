@@ -1,27 +1,67 @@
+// export function EnlacesFooter() {
+//   return (
+//     <div>
+//       <a href="">Términos y condiciones</a>
+//       <a href="">Políticas de privacidad</a>
+//       <a href="">Condiciones de contratación</a>
+//       <a href="">Políticas de gestión de calidad</a>
+//     </div>
+//   );
+// }
+
 export function Redes() {
-  return;
-  <div className="redesSociales" id="RRSS">
-    <i className="bx bxl-facebook">
-      <a href="https://es-la.facebook.com/" target="_blank">
-        FACEBOOK
-      </a>
-    </i>
-    <i className="bx bxl-instagram">
-      <a href="https://www.instagram.com/" target="_blank">
-        INSTAGRAM
-      </a>
-    </i>
-    <i className="bx bxl-twitter">
-      <a href="https://twitter.com/" target="_blank">
-        TWITTER
-      </a>
-    </i>
-    <i className="bx bxl-linkedin" id="LinkedIn">
-      <a href="https://www.youtube.com/"></a>
-    </i>
-    <i className="bx bxl-youtube" id="youtube">
-      <a href="https://ar.linkedin.com/"></a>
-    </i>
-  </div>;
-  //<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  return (
+    <div>
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="nav-item mb-2">
+          <a
+            class="nav-link p-0 text-muted bx bxl-facebook"
+            href="https://es-la.facebook.com/"
+            target="_blank"
+          >
+            Facebook
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a
+            class="nav-link p-0 text-muted bx bxl-instagram"
+            href="https://www.instagram.com/"
+            target="_blank"
+          >
+            Instagram
+          </a>
+        </li>
+
+        <li class="nav-item mb-2">
+          <a
+            class="nav-link p-0 text-muted bx bxl-twitter"
+            href="https://www.twitter.com/"
+            target="_blank"
+          >
+            {" "}
+            Twitter
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a
+            class="nav-link p-0 text-muted bx bxl-youtube"
+            href="https://www.youtube.com/"
+            target="_blank"
+          >
+            Youtube
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a
+            class="nav-link p-0 text-muted bx bxl-linkedin"
+            href="https://ar.linkedin.com/"
+            target="_blank"
+          >
+            Linkedin
+          </a>
+        </li>
+      </ul>
+    </div>
+  );
 }
+export default Redes;

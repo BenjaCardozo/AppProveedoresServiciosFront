@@ -5,7 +5,7 @@ class ClienteServicio {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.CLIENTE(), {
       method: "post",
       headers: { Authorization: `Bearer ${token}` },
-      body: JSON.stringify(data),
+      body: data,
     });
     return response.json();
   }
@@ -19,7 +19,7 @@ class ClienteServicio {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.CLIENTE_BY_ID(id), {
       method: "put",
       headers: { Authorization: `Bearer ${token}` },
-      body: JSON.stringify(data),
+      body: data,
     });
     return response.json();
   }

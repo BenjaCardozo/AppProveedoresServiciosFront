@@ -12,7 +12,7 @@
 export function Redes() {
   return (
     <div>
-      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <ul class="nav flex-column">
         <li class="nav-item mb-2">
           <a
             class="nav-link p-0 text-muted bx bxl-facebook"
@@ -38,8 +38,7 @@ export function Redes() {
             href="https://www.twitter.com/"
             target="_blank"
           >
-            {" "}
-            Twitter
+          Twitter
           </a>
         </li>
         <li class="nav-item mb-2">

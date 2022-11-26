@@ -5,7 +5,7 @@ class ModeradorServicio {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.MODERADOR(), {
       method: "post",
       headers: { Authorization: `Bearer ${token}` },
-      body: JSON.stringify(data),
+      body: data,
     });
     return response.json();
   }
@@ -21,7 +21,7 @@ class ModeradorServicio {
       {
         method: "put",
         headers: { Authorization: `Bearer ${token}` },
-        body: JSON.stringify(data),
+        body: data,
       }
     );
     return response.json();

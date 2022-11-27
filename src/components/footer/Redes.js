@@ -50,7 +50,7 @@ export function Redes() {
             Youtube
           </a>
         </li>
-        <li class="nav-item mb-2">
+        <li class="nav-item">
           <a
             class="nav-link p-0 text-muted bx bxl-linkedin"
             href="https://ar.linkedin.com/"

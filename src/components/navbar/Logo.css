@@ -1,7 +1,5 @@
-div.logo{
-    width: 35px;
-    height: 35px;
-    border-radius: 100%;
-    border: 1px solid gray;
-    margin: auto 0;
+img{
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 70px;
 }

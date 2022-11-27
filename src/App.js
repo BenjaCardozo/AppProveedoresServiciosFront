@@ -24,7 +24,7 @@ export function App() {
         <Route path="/login" element={< LogIn />} />
         <Route path="/registro" element={<Seleccionar />} />
         <Route path="/registro/:rol" element={<RegistroProveedor />} />
-        <Route path="/registro/cliente" element={<RegistroCliente />} />
+        {/* <Route path="/registro/cliente" element={<RegistroCliente />} /> */}
         <Route path="*" element={<PaginaNoEncontrada />} />
       </Routes>
       <Footer />

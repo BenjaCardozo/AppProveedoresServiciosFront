@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import "./Seleccionar.css";
 
 function Seleccionar() {
-  const [rol, setRol] = useState('');
+  const [rol, setRol] = useState("");
   const navigate = useNavigate();
 
   function handleProveedor() {
@@ -12,14 +12,14 @@ function Seleccionar() {
   }
 
   useEffect(() => {
-    navigate('/registro/' + rol);
+    navigate("/registro/" + rol);
   }, [rol]);
 
   return (
     <div>
       <div className="row align-items-md-stretch">
-        <div className="col-md-4" onClick={ handleProveedor}>
-          <Link to={`/registro/${rol}`} >
+        <div className="col-md-4" onClick={handleProveedor}>
+          <Link to={`/registro/${rol}`}>
             <button className="h-100 p-5 text-bg-dark rounded-3" type="button">
               <h2>Quiero ofrecer mis servicios!</h2>
               <p>
@@ -29,8 +29,13 @@ function Seleccionar() {
             </button>
           </Link>
         </div>
-        <div className="col-md-4" onClick={ r=>{setRol("cliente");}}>
-        {/* <Link to={`/registro/${rol}`}> */}
+        <div
+          className="col-md-4"
+          onClick={(r) => {
+            setRol("cliente");
+          }}
+        >
+          <Link to={`/registro/${rol}`}>
             <button
               className="h-100 p-5 bg-light border rounded-3"
               type="button"
@@ -41,7 +46,7 @@ function Seleccionar() {
                 en tu barrio.
               </p>
             </button>
-          {/* </Link> */}
+          </Link>
         </div>
       </div>
     </div>

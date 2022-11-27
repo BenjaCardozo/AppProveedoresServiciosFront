@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Cards } from "./../components/principal/cards/Cards.js";
+import { Cards } from "../components/principal/cards/Cards";
 
 export default class Principal extends Component {
   constructor(props) {

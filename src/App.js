@@ -15,8 +15,8 @@ export function App() {
     <BrowserRouter>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Principal />} />
-        <Route path="/registro" element={<Registro />} />
+        <Route path="/" element={<Principal/>} />
+        <Route path="/registro" element={<Registro/>} />
         <Route path="*" element={<PaginaNoEncontrada />} />
       </Routes>
       <Footer />

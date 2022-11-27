@@ -1,30 +1,37 @@
 import React from "react";
-import { UseFetch } from "../UseFetch"; // FALTA CONEXIÓN
+import { Link } from "react-router-dom";
 import "./Card.css";
 
-export const Card = ({ url }) => {
-  const estado = UseFetch(url);
-  const { cargando, data } = estado;
-
+export const Card = ({ proveedor }) => {
   return (
-    <div>
-      {cargando ? (
-        <h1>Cargando</h1>
-      ) : (
-        <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-primary">
-              Go somewhere
-            </a>
+    <div className="col">
+      <div class="card" style="width: 18rem;">
+        <img
+          width="100%"
+          src={proveedor.foto}
+          class="card-img-top"
+          alt="fotos del servicio"
+        />
+        <div class="card-body">
+          <p class="card-text">{proveedor.descripcion}</p>
+
+          <div className="d-flex justify-content-between align-items-center">
+            <div className="btn-group">
+              <button
+                type="button"
+                className="btn btn-sm btn-outline-secondary"
+              >
+                {/* <Link
+                  to={`/detail/${personaje.id}`}
+                  className="nav-link px-2 text-secondary"
+                >
+                  Detalle
+                </Link> */}
+              </button>
+            </div>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };

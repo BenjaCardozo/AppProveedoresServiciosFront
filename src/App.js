@@ -29,6 +29,7 @@ export function App() {
         {/* <Route path="/registro/cliente" element={<RegistroCliente />} /> */}
         <Route path="*" element={<PaginaNoEncontrada />} />
       </Routes>
+      <Principal />
       <Footer />
     </BrowserRouter>
   );

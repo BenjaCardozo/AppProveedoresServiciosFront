@@ -1,15 +1,18 @@
-import { React, useState, useEffect } from "react";
-import Proveedor from "../services/Proveedor";
+import { React, Component } from "react";
+import { Cards } from "./../components/principal/cards/Cards.js";
 
-const Principal = () => {
-  const [proveedor, setProveedor] = useState([]);
-  useEffect(() => {
-    Proveedor.listarProveedores()
-      .then((response) => setProveedor(response.proveedor))
-      .catch((error) => console.log(error));
-  }, []);
-  console.log(proveedor);
-  return <div>Principal</div>;
-};
-
-export default Principal;
+export default class Principal extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { proveedores: [] };
+  }
+  render() {
+    return (
+      <div>
+        <main>
+          <Cards />
+        </main>
+      </div>
+    );
+  }
+}

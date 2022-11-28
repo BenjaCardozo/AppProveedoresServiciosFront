@@ -15,6 +15,7 @@ function Seleccionar() {
   }, [rol]);
 
   return (
+   
     <div>
       <div className="row align-items-md-stretch">
         <div className="col-md-4" onClick={handleProveedor}>
@@ -49,6 +50,7 @@ function Seleccionar() {
         </div>
       </div>
     </div>
+
   );
 }
 

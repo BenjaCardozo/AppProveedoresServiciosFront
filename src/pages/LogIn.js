@@ -1,13 +1,13 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import loginServicio from "../services/Login";
 
 function LogIn() {
   const [username, SetUsername] = useState("");
   const [password, SetPassword] = useState("");
-  const [session, SetSession] = useState(null);
   const [messageError, setMessageError] = useState("");
+  const navigate = useNavigate();
 
   const handleLoginSubmit = (event) => {
     event.preventDefault();
@@ -16,14 +16,13 @@ function LogIn() {
         correo: username,
         clave: password,
       })
-      .then((data) => SetSession(data))
+      .then((data) => {
+        localStorage.setItem("loggedAppUser", JSON.stringify(data));
+        console.log(data);
+      })
       .catch((error) => setMessageError(error));
 
-    <Navigate to={`/${session}`}></Navigate>;
-
-    SetUsername("");
-    SetPassword("");
-    //link perfil (data)
+    navigate("/");
   };
 
   return (
@@ -46,7 +45,7 @@ function LogIn() {
           onChange={({ target }) => SetPassword(target.value)}
         ></input>
       </div>
-      <button>Login</button>
+      <button>Iniciar Sessión</button>
     </form>
   );
 }

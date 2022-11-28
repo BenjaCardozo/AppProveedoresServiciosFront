@@ -6,3 +6,10 @@ nav#navegador{
     display: flex;
     background-color: #0E698B;
 }
+
+div.iniciarRegistrar{
+    height: 100%;
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import "./Seleccionar.css";
+import { Link, useNavigate } from "react-router-dom";
+import "../components/registro/Seleccionar.css";
 
 function Seleccionar() {
   const [rol, setRol] = useState("");

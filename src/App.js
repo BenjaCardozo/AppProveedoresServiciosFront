@@ -19,11 +19,9 @@ export function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Principal />} />
-        {/* <Route path="/registro" element={<Registro />} /> */}
         <Route path="/login" element={< LogIn />} />
         <Route path="/registro" element={<Seleccionar />} />
         <Route path="/registro/:rol" element={<Registro />} />
-        {/* <Route path="/registro/cliente" element={<RegistroCliente />} /> */}
         <Route path="*" element={<PaginaNoEncontrada />} />
       </Routes>
       <Footer />

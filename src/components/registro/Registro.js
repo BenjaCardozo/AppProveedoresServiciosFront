@@ -1,7 +1,5 @@
 import { useParams, Link } from "react-router-dom";
 import CamposProv from "./CamposProv";
-import { API_PROVEEDORES } from "../../constants/Api.constant";
-import Proveedor from "../../services/Proveedor";
 
 function RegistroForm() {
   const { rol } = useParams();

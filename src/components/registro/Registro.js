@@ -1,10 +1,11 @@
 import { useParams, Link } from "react-router-dom";
 import CamposProv from "./CamposProv";
+import "./Registro.css";
 
 function RegistroForm() {
   const { rol } = useParams();
   return (
-    <div className="container mt-5 mb-5">
+      <div className="body">
       <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="card">
@@ -162,7 +163,7 @@ function RegistroForm() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
   );
 }
 

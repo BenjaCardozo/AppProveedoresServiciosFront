@@ -4,11 +4,14 @@ import "./Card.css";
 import FotoServicio from "./../../../services/Foto.js";
 
 export const Card = ({ proveedor }) => {
-  var foto = "http://localhost:8080/foto/usuario/" + proveedor.id;
-  
+  var foto =
+    FotoServicio.buscarFotoUsuario(proveedor.id) == null
+      ? "default.jpg"
+      : "default.jpg";
+
   FotoServicio.buscarFotoUsuario(proveedor.id)
     .then((img) => console.log(img))
-    .catch((error) => (console.log(error)));
+    .catch((error) => console.log(error));
 
   var estrellas = "⭐";
   for (let i = 1; i < proveedor.promedioFeedback; i++) {

@@ -8,9 +8,8 @@ import Principal from "./pages/Principal";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import RegistroProveedor from "./pages/RegistroProveedor";
-import RegistroCliente from './pages/RegistroCliente';
-import Seleccionar from "./components/registro/Seleccionar";
+import Registro from "./components/registro/Registro";
+import Seleccionar from "./pages/Seleccionar";
 import LogIn from "./pages/LogIn"
 
 
@@ -20,11 +19,9 @@ export function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Principal />} />
-        {/* <Route path="/registro" element={<Registro />} /> */}
         <Route path="/login" element={< LogIn />} />
         <Route path="/registro" element={<Seleccionar />} />
-        <Route path="/registro/:rol" element={<RegistroProveedor />} />
-        {/* <Route path="/registro/cliente" element={<RegistroCliente />} /> */}
+        <Route path="/registro/:rol" element={<Registro />} />
         <Route path="*" element={<PaginaNoEncontrada />} />
       </Routes>
       <Footer />

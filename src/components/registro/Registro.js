@@ -1,13 +1,14 @@
-import React from "react";
+import { useParams, Link } from "react-router-dom";
+import CamposProv from "./CamposProv";
 
-function RegistroCliente() {
-  const { cliente } = useParams();
+function RegistroForm() {
+  const { rol } = useParams();
   return (
     <div className="container mt-5 mb-5">
       <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="card">
-            <div className="card-header">Registro {cliente}</div>
+            <div className="card-header">Registro {rol}</div>
             <div className="card-body">
               <form
                 className="row gy-2 gx-3 align-items-center"
@@ -27,7 +28,6 @@ function RegistroCliente() {
                         type="text"
                         className="form-control"
                         name="name"
-                        id="name"
                         placeholder="Escriba su nombre"
                       />
                     </div>
@@ -121,6 +121,11 @@ function RegistroCliente() {
                     </div>
                   </div>
                 </div>
+                {
+                  rol == 'proveedor'
+                  ? <CamposProv />: <></>
+                }
+                
                 <div className="form-group">
                   <label for="name" className="cols-sm-2 control-label">
                     Contacto
@@ -134,7 +139,7 @@ function RegistroCliente() {
                         type="text"
                         className="form-control"
                         name="name"
-                        placeholder="ingrese su número de telefono"
+                        placeholder="Ingrese su número de telefono"
                       />
                     </div>
                   </div>
@@ -161,4 +166,4 @@ function RegistroCliente() {
   );
 }
 
-export default RegistroCliente;
+export default RegistroForm;

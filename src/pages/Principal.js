@@ -9,9 +9,11 @@ export default class Principal extends Component {
 
   render() {
     return (
-      <main>
-        <Cards />
-      </main>
+      <div>
+        <main>
+          <Cards />
+        </main>
+      </div>
     );
   }
 }

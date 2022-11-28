@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { React } from "react";
 import { Cards } from "./../components/principal/cards/Cards.js";
 
 export default class Principal extends Component {
@@ -6,14 +6,11 @@ export default class Principal extends Component {
     super(props);
     this.state = { proveedores: [] };
   }
-
-  render() {
-    return (
+    render(){
       <div>
         <main>
           <Cards />
         </main>
       </div>
-    );
-  }
+    }
 }

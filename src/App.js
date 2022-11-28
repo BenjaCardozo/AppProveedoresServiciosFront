@@ -8,7 +8,11 @@ import Principal from "./pages/Principal";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import Registro from './pages/Registro';
+import Registro from "./components/registro/Registro";
+import Seleccionar from "./pages/Seleccionar";
+import LogIn from "./pages/LogIn"
+import AdministrarProveedores from "./pages/AdministrarProveedores";
+
 
 export function App() {
   return (
@@ -16,7 +20,10 @@ export function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Principal />} />
-        <Route path="/registro" element={<Registro />} />
+        <Route path="/login" element={< LogIn />} />
+        <Route path="/registro" element={<Seleccionar />} />
+        <Route path="/registro/:rol" element={<Registro />} />
+        <Route path="/administrar-proveedores" element={<AdministrarProveedores />} />
         <Route path="*" element={<PaginaNoEncontrada />} />
       </Routes>
       <Footer />

@@ -1,0 +1,11 @@
+.row {
+  align-content: center;
+  justify-content: center;
+  color: #253854;
+  height: fit-content;;
+  margin: 1px;
+  padding: 40px;
+  width: auto;
+  max-width: 1800px;
+  min-width: 450px;
+}

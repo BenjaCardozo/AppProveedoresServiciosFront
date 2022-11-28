@@ -4,7 +4,10 @@ class FeedbackServicio {
   async crearFeedback(data, token) {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.FEEDBACK(), {
       method: "post",
-      headers: { Authorization: `Bearer ${token}` },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
       body: JSON.stringify(data),
     });
     return response.json();

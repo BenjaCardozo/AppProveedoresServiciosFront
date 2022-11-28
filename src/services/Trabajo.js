@@ -4,7 +4,10 @@ class TrabajoServicio {
   async crearTrabajo(data, token) {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.TRABAJO(), {
       method: "post",
-      headers: { Authorization: `Bearer ${token}` },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
       body: JSON.stringify(data),
     });
     return response.json();
@@ -53,7 +56,9 @@ class TrabajoServicio {
   }
 
   async listarTrabajosPorProveedor(id) {
-    const response = await fetch(API_PROVEEDORES_SERVICIOS.TRABAJO_PROVEEDOR(id));
+    const response = await fetch(
+      API_PROVEEDORES_SERVICIOS.TRABAJO_PROVEEDOR(id)
+    );
     return response.json();
   }
 }

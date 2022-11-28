@@ -1,10 +1,15 @@
 import { API_PROVEEDORES_SERVICIOS } from "../constants/Api.constant";
 
+let token = null;
+
 class ProveedorServicio {
-  async crearProveedor(data, token) {
+  setToken = (newToken) => {
+    token = `Bearer ${newToken}`;
+  };
+
+  async crearProveedor(data) {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.PROVEEDOR(), {
       method: "post",
-      headers: { Authorization: `Bearer ${token}` },
       body: data,
     });
     return response.json();
@@ -15,12 +20,12 @@ class ProveedorServicio {
     return response.json();
   }
 
-  async actualizarProveedor(data, token, id) {
+  async actualizarProveedor(data, id) {
     const response = await fetch(
       API_PROVEEDORES_SERVICIOS.PROVEEDOR_BY_ID(id),
       {
         method: "put",
-        headers: { Authorization: `Bearer ${token}` },
+        headers: { Authorization: token },
         body: data,
       }
     );
@@ -32,29 +37,29 @@ class ProveedorServicio {
     return response.json();
   }
 
-  async eliminarProveedor(id, token) {
+  async eliminarProveedor(id) {
     const response = await fetch(
       API_PROVEEDORES_SERVICIOS.PROVEEDOR_BY_ID(id),
       {
         method: "delete",
-        headers: { Authorization: `Bearer ${token}` },
+        headers: { Authorization: token },
       }
     );
     return response.json();
   }
 
-  async bajaProveedor(id, token) {
+  async bajaProveedor(id) {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.PROVEEDOR_BAJA(id), {
       method: "patch",
-      headers: { Authorization: `Bearer ${token}` },
+      headers: { Authorization: token },
     });
     return response.json();
   }
 
-  async altaProveedor(id, token) {
+  async altaProveedor(id) {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.PROVEEDOR_ALTA(id), {
       method: "patch",
-      headers: { Authorization: `Bearer ${token}` },
+      headers: { Authorization: token },
     });
     return response.json();
   }

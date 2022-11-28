@@ -1,0 +1,22 @@
+.card{
+    margin: auto;
+    width: 17rem;
+}
+
+h6{
+    font-weight: bold;
+}
+
+#img-card{
+    margin:auto;
+    align-self: auto;
+    position: relative;
+}
+
+#btn-card{
+    width: 142%;
+}
+
+.btn-outline-secondary{
+    color: white;
+}

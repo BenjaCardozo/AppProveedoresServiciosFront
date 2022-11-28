@@ -37,12 +37,13 @@ button#button-addon2{
     height: 35px;
     width: 40px;
     padding: 0;
+    background-color: #45afd7c2;
 }
 button#button-addon2:hover{
     background-color: antiquewhite;
 }
 button#button-addon2:active{
-    background-color: aquamarine;
+    border: 1px solid black;
 }
 
 .dropdown{

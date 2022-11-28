@@ -4,4 +4,5 @@ nav#navegador{
     height: 45px;
     border: 1px solid gray;
     display: flex;
+    background-color: #0E698B;
 }

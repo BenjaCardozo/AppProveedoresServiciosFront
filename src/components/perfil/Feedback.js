@@ -45,10 +45,7 @@ export function Feedback(){
  
  export function Comentario(){
      return <div class="comentario perfil">
-                 <div></div>
-                 <p class="comentario" >
-                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic eius recusandae sapiente veritatis velit officia dolore cupiditate ipsam! Reiciendis cumque delectus veritatis minima modi a magni eligendi! Modi, architecto commodi?
-                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                 </p>
+                 <br />
+                 <textarea class="comentario" ></textarea>
              </div>
  }

@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import loginServicio from "../services/Login";
+import './Login.css';
 
 function LogIn() {
   const [username, SetUsername] = useState("");

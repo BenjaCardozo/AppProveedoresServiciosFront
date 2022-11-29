@@ -8,8 +8,8 @@ function RegistroForm() {
       <div className="body">
       <div className="row justify-content-center">
         <div className="col-md-6">
-          <div className="card">
-            <div className="card-header">Registro {rol}</div>
+          <div className="card registro">
+            <div className="card-header registro">Registro {rol}</div>
             <div className="card-body">
               <form
                 className="row gy-2 gx-3 align-items-center"
@@ -126,7 +126,7 @@ function RegistroForm() {
                   rol == 'proveedor'
                   ? <CamposProv />: <></>
                 }
-                
+
                 <div className="form-group">
                   <label for="name" className="cols-sm-2 control-label">
                     Contacto

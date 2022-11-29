@@ -25,7 +25,7 @@ export function Nav() {
         {session ? (
           <Perfil setSession={setSession}/>
         ) : (
-          <div>
+          <div className="iniciarRegistrar">
             <Link to={`/login`}>
               <button type="button">Iniciar Sección</button>
             </Link>

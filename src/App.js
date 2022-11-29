@@ -10,23 +10,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import Registro from "./components/registro/Registro";
 import Seleccionar from "./pages/Seleccionar";
-import LogIn from "./pages/LogIn"
+import LogIn from "./pages/LogIn";
 import AdministrarProveedores from "./pages/AdministrarProveedores";
-
+import { MisServicios } from "./components/perfil/MisServicios";
 
 export function App() {
   return (
     <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Principal />} />
-        <Route path="/login" element={< LogIn />} />
-        <Route path="/registro" element={<Seleccionar />} />
-        <Route path="/registro/:rol" element={<Registro />} />
-        <Route path="/administrar-proveedores" element={<AdministrarProveedores />} />
-        <Route path="*" element={<PaginaNoEncontrada />} />
-      </Routes>
-      <Footer />
+      <MisServicios></MisServicios>
     </BrowserRouter>
   );
 }

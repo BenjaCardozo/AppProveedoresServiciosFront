@@ -16,7 +16,7 @@
 
 /* Start form  attributes */
 form {
-  width: auto;
+  width: 500px;
   min-height: 500px;
   height: auto;
   border-radius: 5px;
@@ -26,3 +26,6 @@ form {
   background-image: linear-gradient(-225deg, #27c3ea 50%, #86d7c1 50%);
 }
 
+div.registro{
+  width: 520px;
+}

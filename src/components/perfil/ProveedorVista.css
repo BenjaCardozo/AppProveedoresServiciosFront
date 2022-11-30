@@ -1,0 +1,149 @@
+:root{
+    --calificacion1: 10%;
+    --calificacion2: 2%;
+    --calificacion3: 40%;
+    --calificacion4: 70%;
+    --calificacion5: 75%;
+}
+
+
+
+div.vista{
+    display: grid;
+    grid-template-columns: 35% 65%;
+}
+
+/*-----Aside Perfil--------*/
+
+div.otros{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+
+}
+
+div.oficio{
+    width: 100px;
+    height: 150px;
+    margin: auto;
+    border: 1px solid black;
+}
+
+
+div.calificacion{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+div.puntaje{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+h1.puntajeFinal{
+    text-align: center;
+    font-size: 7em;
+    margin: 0;
+}
+
+.w-1 {
+    width: var(--calificacion1);
+    border: 0;
+}
+.w-2 {
+    width: var(--calificacion2);
+    border: 0;
+}
+.w-3 {
+    width: var(--calificacion3);
+    border: 0;
+}
+.w-4 {
+    width: var(--calificacion4);
+    border: 0;
+}
+.w-5 {
+    width: var(--calificacion5);
+    border: 0;
+}
+.progress{
+    border: 0;
+    display: grid;
+    margin: 1%;
+}
+
+.progresoGeneral{
+    display: grid;
+    grid-template-rows: 5fr;
+}
+
+div.barra{
+    display: grid;
+    grid-template-columns: 5% 95%;
+    align-items: center;
+}
+h6.punto{
+    text-align: center;
+    margin: auto;
+}
+/*---------------------*/
+
+h4{
+    margin-top: 5%;
+}
+
+div.contacto{
+    margin: 0;
+}
+h6.dato{
+    margin: 0;
+    padding: 0;
+}
+
+
+div.nombre{
+    text-align: center;
+}
+
+div.solicitar{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    padding-bottom: 2%;
+}
+
+/*-----Responsive Desing--------*/
+
+
+    
+
+
+        
+        
+@media(max-width:640px)and (min-width:430px){
+    div.vista{
+        grid-template-columns: 100%;
+    }
+}
+
+@media(max-width:429px)and (min-width:10px){
+    div.vista{
+        grid-template-columns: 100%;
+    }
+    div.otros{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-content: center;
+    
+    }
+
+    h4{
+        text-align: center;
+    }
+
+    div.calificacion{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-content: center;
+    }
+}

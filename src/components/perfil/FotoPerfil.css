@@ -1,0 +1,29 @@
+/*--------------------*/
+
+/*------Foto Perfil--------*/
+
+
+div.perfil{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    padding-top: 2%;
+}
+
+div.fotoPerfilProveedor{
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    margin: 20px 0;
+    border: 1px solid black;
+}
+
+div.nombre{
+    text-align: center;
+    padding: 0;
+}
+
+h3.nombrePerfil{
+    font-weight: bold;
+    margin: 0;
+}

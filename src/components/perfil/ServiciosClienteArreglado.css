@@ -1,0 +1,22 @@
+div.servicioCliente{
+    display: grid;
+    grid-template-columns: 35% 65%;
+    justify-content: space-around;
+}
+
+div.top{
+    display: flex;
+    align-items: center;
+    margin-top: 6%;
+}
+
+div.top-div{
+    margin: auto 2%;
+}
+h6{
+    margin: auto;
+}
+
+button.historial{
+    padding: 1px 15px;
+}

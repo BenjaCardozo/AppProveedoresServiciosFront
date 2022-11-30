@@ -39,23 +39,40 @@ h1{
 
   button.solicitar{
     width: 150px;
-    left: 370px;
-    position: relative;
+    left: 500px;
+    position: relative; 
+   margin-left: auto;
+    min-width: 150px;
+    max-width: 300px;
   }
 
   button.cancelar{
-    width: 100px;
     min-width: 100px;
-    left: 600px;
+    left: 800px;
     position: relative;
-    margin-left: 150px;
-    margin-right: 150px;
+   
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    width: auto;
+    min-width: 150px;
+    max-width: 300px;
   }
   div.inpts{
-    margin-left: 250px;
-    margin-right: 250px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px;
     width: auto;
     min-width: 300px;
     max-width: 1050px;
   }
+
+  .titulo {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial Black; 
+    font-weight: bold; 
+    font-size: 30px; 
+    color: #253854; 
+    text-shadow: 0 1px 0 rgb(20, 104, 153), 0 2px 0 rgb(11, 56, 114), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
+    }

@@ -1,9 +1,12 @@
-import Nav from "../components/navbar/Nav";
-import { ProveedorVista } from "../components/perfil/ProveedorVista";
+import React from 'react'
+import { ProveedorVista } from './../components/perfil/ProveedorVista';
 
-export function PerfilProveedor(){
-    return <>
-        <Nav/>
+const PerfilProveedor = () => {
+  return (
+    <>
         <ProveedorVista/>
     </>
+  )
 }
+
+export default PerfilProveedor

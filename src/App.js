@@ -14,6 +14,8 @@ import LogIn from "./pages/LogIn";
 import AdministrarProveedores from "./pages/AdministrarProveedores";
 import ContactoConElProveedor from "./components/perfil/ContactoConElProveedor";
 import ServiciosCliente from "./components/perfil/ServiciosCliente";
+import PerfilCliente from './pages/PerfilCliente';
+import  PerfilProveedor  from "./pages/PerfilProveedor";
 
 
 export function App() {
@@ -27,6 +29,8 @@ export function App() {
         <Route path="/registro/:rol" element={<Registro />} />
         <Route path="/contacto-proveedor" element={<ContactoConElProveedor />}/>
         <Route path="/mis-servicios" element={ <ServiciosCliente/> } />
+        <Route path="/mi-perfil" element={ <PerfilCliente/> } />
+        <Route path="/perfil-proveedor" element={ <PerfilProveedor />} />
         <Route path="/administrar-proveedores" element={<AdministrarProveedores />} />
         <Route path="*" element={<PaginaNoEncontrada />} />
       </Routes>

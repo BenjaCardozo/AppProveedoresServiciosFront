@@ -15,8 +15,8 @@
 }
 
 /* Start form  attributes */
-form {
-  width: 500px;
+form.form {
+  width: auto;
   min-height: 500px;
   height: auto;
   border-radius: 5px;

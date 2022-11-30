@@ -4,4 +4,12 @@ nav#navegador{
     height: 45px;
     border: 1px solid gray;
     display: flex;
+    background-color: #0E698B;
+}
+
+div.iniciarRegistrar{
+    height: 100%;
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
 }

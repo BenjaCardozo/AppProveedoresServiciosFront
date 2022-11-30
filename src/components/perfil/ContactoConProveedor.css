@@ -1,0 +1,61 @@
+main{
+    background-image: linear-gradient(-225deg, #27c3ea 50%, #86d7c1 50%);
+    padding: 2px;
+  margin: 0px;
+  box-sizing: border-box;
+  height: auto;
+}
+
+h1{
+    padding: 6px ;
+    margin-left: 630px;
+    margin-right: auto;
+}
+  
+  .body {
+    padding: 50px;
+    margin: 40px;
+    background-image: linear-gradient(-225deg, #0e698b 0%, #27c3ea 100%);
+    background-image: linear-gradient(to top, #0e698b 0%, #0e698b 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: "Nunito", sans-serif;
+    opacity: 0.95;
+    ;
+  }
+  
+  /* Start form  attributes */
+  */
+  
+  .registro{
+    width: auto;
+  }
+
+  .botones{
+    margin: 30px;
+    display: flex;
+    width: 150px;
+  }
+
+  button.solicitar{
+    width: 150px;
+    left: 370px;
+    position: relative;
+  }
+
+  button.cancelar{
+    width: 100px;
+    min-width: 100px;
+    left: 600px;
+    position: relative;
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+  div.inpts{
+    margin-left: 250px;
+    margin-right: 250px;
+    padding: 10px;
+    width: auto;
+    min-width: 300px;
+    max-width: 1050px;
+  }

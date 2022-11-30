@@ -1,6 +1,7 @@
 import "./Perfil.css";
 import { useEffect, useState } from "react";
 import proveedorServicio from "../../services/Proveedor";
+import { Link } from 'react-router-dom';
 
 export function Perfil() {
   const handleLogout = () => {
@@ -56,9 +57,9 @@ export function Perfil() {
               </a>
             </li>
             <li>
-              <a className="dropdown-item" href="#">
+              <Link className="dropdown-item" href="/mis-servicios">
                 Historial de servicios
-              </a>
+              </Link>
             </li>
             <li>
               <hr className="dropdown-divider"></hr>

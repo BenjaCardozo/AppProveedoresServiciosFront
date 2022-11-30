@@ -12,12 +12,25 @@ import Registro from "./components/registro/Registro";
 import Seleccionar from "./pages/Seleccionar";
 import LogIn from "./pages/LogIn";
 import AdministrarProveedores from "./pages/AdministrarProveedores";
-import { MisServicios } from "./components/perfil/MisServicios";
+import ContactoConElProveedor from "./components/perfil/ContactoConElProveedor";
+import ServiciosCliente from "./components/perfil/ServiciosCliente";
+
 
 export function App() {
   return (
     <BrowserRouter>
-      <MisServicios></MisServicios>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Principal />} />
+        <Route path="/login" element={< LogIn />} />
+        <Route path="/registro" element={<Seleccionar />} />
+        <Route path="/registro/:rol" element={<Registro />} />
+        <Route path="/contacto-proveedor" element={<ContactoConElProveedor />}/>
+        <Route path="/mis-servicios" element={ <ServiciosCliente/> } />
+        <Route path="/administrar-proveedores" element={<AdministrarProveedores />} />
+        <Route path="*" element={<PaginaNoEncontrada />} />
+      </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

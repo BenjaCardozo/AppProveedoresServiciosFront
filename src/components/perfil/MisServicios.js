@@ -20,8 +20,4 @@ export function MisServicios() {
     </>
   ;
 }
-export function DescripcionSolicitud() {
-  return (
-<></>
-  );
-}
+

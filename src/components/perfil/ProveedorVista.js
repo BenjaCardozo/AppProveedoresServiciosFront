@@ -1,6 +1,7 @@
 import "./ProveedorVista.css";
 
 import { FotoPerfil } from "./FotoPerfil";
+import { Link } from 'react-router-dom';
 
 export function ProveedorVista(){
     return<div class="vista">
@@ -18,9 +19,9 @@ export function ProveedorVista(){
                 </div>
             </div>
             <div className="solicitar">
-                <a href="#">
+                <Link to={"/contacto-proveedor"}>
                 <button type="button" class="btn btn-primary btn-sm">Solicitar Trabajo</button>
-                </a>
+                </Link>
             </div>
             
         </div>

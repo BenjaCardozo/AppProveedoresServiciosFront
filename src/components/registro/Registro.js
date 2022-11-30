@@ -12,7 +12,7 @@ function RegistroForm() {
             <div className="card-header registro">Registro {rol}</div>
             <div className="card-body">
               <form
-                className="row gy-2 gx-3 align-items-center"
+                className="form row gy-2 gx-3 align-items-center"
                 method="post"
                 action="#"
               >

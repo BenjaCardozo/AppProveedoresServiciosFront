@@ -1,44 +1,32 @@
 import React from "react";
 import "./ContactoConProveedor.css";
 import { useEffect } from "react";
-import Swal from "sweetalert2";
 
 
 const ContactoConElProveedor = () => {
-  
-
-  function mostrarAlerta() {
-  //   Swal.fire({
-  //     title: "Estas seguro que quieres Cancelar?",
-  //     text: "No vas a recuperar lo escrito.",
-  //     icon: "warning",
-  //     showCancelButton: true,
-  //     confirmButtonColor: "#d33",
-  //     cancelButtonColor: "#3085d6",
-  //     cancelButtonText: "Volver",
-  //     confirmButtonText: "Si, quiero Cancelar",
-  //   }).then((result) => {
-  //     if (result.isConfirmed) {
-  //       Swal.fire("Borrado!", "Acción exitosa");
-  //     }
-  //   });
+  const Swal = require("sweetalert2");
+  const mostrarAlerta = ()=> {
+      Swal.fire({
+        title: "Estas seguro que quieres Cancelar?",
+        text: "No vas a recuperar lo escrito.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#3085d6",
+        cancelButtonText: "Volver",
+        confirmButtonText: "Si, quiero Cancelar",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire("Borrado!", "Acción exitosa");
+        }
+      });
   }
-
-  const bot = (
-    <button
-      type="button"
-      className="btn btn-danger cancelar"
-      onClick={mostrarAlerta()}
-    >
-      Cancelar
-    </button>
-  );
 
   return (
     <>
       <main>
         <div className="body">
-          <h1 align="left">
+          <h1 className="titulo">
             <strong>Solicitar Trabajo</strong>
           </h1>
           <br />
@@ -82,11 +70,17 @@ const ContactoConElProveedor = () => {
             </div>
           </div>
 
-          <div className="botones body">
+          <div className="botones ">
             <button type="button" className="btn btn-success solicitar">
               Solicitar
             </button>
-            {bot}
+            <button
+              type="button"
+              className="btn btn-danger cancelar"
+              onClick={mostrarAlerta}
+            >
+              Cancelar
+            </button>
           </div>
         </div>
       </main>

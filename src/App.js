@@ -10,7 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import Registro from "./components/registro/Registro";
 import Seleccionar from "./pages/Seleccionar";
-import LogIn from "./pages/LogIn"
+import LogIn from "./pages/LogIn";
 import AdministrarProveedores from "./pages/AdministrarProveedores";
 import ContactoConElProveedor from "./components/perfil/ContactoConElProveedor";
 import ServiciosCliente from "./components/perfil/ServiciosCliente";

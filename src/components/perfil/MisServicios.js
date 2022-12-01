@@ -17,12 +17,7 @@ export function MisServicios() {
           
         </div>
         <div>
-          <textarea class="solicitud">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic eius
-            recusandae sapiente veritatis velit officia dolore cupiditate ipsam!
-            Reiciendis cumque delectus veritatis minima modi a magni eligendi! Modi,
-            architecto commodi? Lorem ipsum dolor sit, amet consectetur adipisicing
-            elit.
+          <textarea class="solicitud" placeholder="Descripcion...">
           </textarea>
           </div>
       <div>

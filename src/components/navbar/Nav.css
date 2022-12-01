@@ -79,7 +79,7 @@ button#boton.btn{
 /*---------------------------*/
 
 /*-----------Logo------------*/
-img{
+img.App-logo{
     position: absolute;
     margin-top: 20px;
     margin-left: 70px;

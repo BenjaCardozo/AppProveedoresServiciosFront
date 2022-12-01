@@ -1,5 +1,5 @@
 import "./ProveedorVista.css";
-
+import imagenes from "../../img/imagenes";
 import { FotoPerfil } from "./FotoPerfil";
 import { Link } from 'react-router-dom';
 
@@ -42,9 +42,9 @@ export function AsidePerfil(){
         <div className="servicios">
             <h4><strong>Servicios</strong></h4>
             <div className="otros">
-                <div className="oficio"></div>
-                <div className="oficio"></div>
-                <div className="oficio"></div>
+                <div className="oficioGas"><img className="gas" src={imagenes.imgGas1} alt="imagen 1"></img></div>
+                <div className="oficioGas"><img className="gas" src={imagenes.imgGas2} alt="imagen 2"></img></div>
+                <div className="oficioGas"><img className="gas" src={imagenes.imgGas3} alt="imagen 3"></img></div>
             </div>
         </div>
 

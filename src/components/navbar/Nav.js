@@ -101,16 +101,16 @@ function obtenerNombre() {
             aria-expanded="false"
           >
             <FotoPerfil clientes/>
-            <div id="nombre">{clientes.nombre}</div>
+            {/* <div id="nombre">{clientes.nombre}</div> */}
           </button>
           <ul className="dropdown-menu">
             <li>
-              <a className="dropdown-item" href="#">
+              <Link to={'/mi-perfil'} className="dropdown-item" >
                 Perfil
-              </a>
+              </Link>
             </li>
             <li>
-              <Link className="dropdown-item" href="/mis-servicios">
+              <Link className="dropdown-item" to={"/mis-servicios"}>
                 Historial de servicios
               </Link>
             </li>

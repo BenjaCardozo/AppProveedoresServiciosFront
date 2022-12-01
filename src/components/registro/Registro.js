@@ -9,7 +9,7 @@ function RegistroForm() {
       <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="card registro">
-            <div className="card-header registro">Registro {rol}</div>
+            <div className="card-header ">Registro {rol}</div>
             <div className="card-body">
               <form
                 className="form row gy-2 gx-3 align-items-center"

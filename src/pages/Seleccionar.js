@@ -17,7 +17,7 @@ function Seleccionar() {
   return (
    
     <div>
-      <div className="row align-items-md-stretch">
+      <div className="row align-items-md-stretch selec">
         <div className="col-md-4" onClick={handleProveedor}>
           <Link to={`/registro/${rol}`}>
             <button className="h-100 p-5 text-bg-dark rounded-3" type="button">

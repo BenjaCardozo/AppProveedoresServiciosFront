@@ -1,11 +1,14 @@
-.row {
+div.selec {
   align-content: center;
   justify-content: center;
   color: #253854;
   height: fit-content;;
   margin: 1px;
-  padding: 40px;
+  padding: 10px;
   width: auto;
   max-width: 1800px;
   min-width: 450px;
+  height: 800px;
+  background: rgb(37,56,84);
+background: linear-gradient(142deg, rgba(37,56,84,1) 10%, rgba(14,105,139,1) 47%, rgba(134,215,193,1) 100%);
 }

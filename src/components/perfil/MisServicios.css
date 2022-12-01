@@ -31,7 +31,7 @@ div.descripcionSolicitud{
     height: 200px;
     margin: auto auto 3% auto;
     border: 1px solid black;
-    border-radius: 10px 10px;
+    border-radius: 8px 8px;
     background-color: white;
     color: rgba(0, 0, 0, 0.808);
     text-align: center;
@@ -40,6 +40,7 @@ div.descripcionSolicitud{
 
   textarea{
     width: 80%;
+    min-height: 100px;
     max-height: 100px;
   }
 

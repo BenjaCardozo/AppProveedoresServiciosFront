@@ -1,78 +1,83 @@
-main{
-    background-image: linear-gradient(-225deg, #27c3ea 50%, #86d7c1 50%);
-    padding: 2px;
+main {
+  background-image: linear-gradient(-225deg, #27c3ea 50%, #86d7c1 50%);
+  padding: 2px;
   margin: 0px;
   box-sizing: border-box;
   height: auto;
 }
 
-h1{
-    padding: 6px ;
-    margin-left: 630px;
-    margin-right: auto;
+h1 {
+  padding: 6px;
+  margin-left: 630px;
+  margin-right: auto;
 }
-  
-  .body {
-    padding: 50px;
-    margin: 40px;
-    background-image: linear-gradient(-225deg, #0e698b 0%, #27c3ea 100%);
-    background-image: linear-gradient(to top, #0e698b 0%, #0e698b 100%);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    font-family: "Nunito", sans-serif;
-    opacity: 0.95;
-    ;
-  }
-  
-  /* Start form  attributes */
-  */
-  
-  .registro{
-    width: auto;
-  }
 
-  .botones{
-    margin: 30px;
-    display: flex;
-    width: 150px;
-  }
+.body {
+  padding: 50px;
+  background: rgb(37, 56, 84);
+  background: linear-gradient(
+    142deg,
+    rgba(37, 56, 84, 1) 10%,
+    rgba(14, 105, 139, 1) 47%,
+    rgba(134, 215, 193, 1) 100%
+  );
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: "Nunito", sans-serif;
+  opacity: 0.95;
+}
 
-  button.solicitar{
-    width: 150px;
-    left: 500px;
-    position: relative; 
-   margin-left: auto;
-    min-width: 150px;
-    max-width: 300px;
-  }
+/* Start form  attributes */
+*/ .registro {
+  width: auto;
+}
 
-  button.cancelar{
-    min-width: 100px;
-    left: 800px;
-    position: relative;
-   
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-    width: auto;
-    min-width: 150px;
-    max-width: 300px;
-  }
-  div.inpts{
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-    width: auto;
-    min-width: 300px;
-    max-width: 1050px;
-  }
+.botones {
+  margin: 30px;
+  display: flex;
+  width: 150px;
+}
 
-  .titulo {
-    margin-left: auto;
-    margin-right: auto;
-    font-family: Arial Black; 
-    font-weight: bold; 
-    font-size: 30px; 
-    color: #253854; 
-    text-shadow: 0 1px 0 rgb(20, 104, 153), 0 2px 0 rgb(11, 56, 114), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
-    }
+button.solicitar {
+  width: 150px;
+  left: 500px;
+  position: relative;
+  margin-left: auto;
+  min-width: 150px;
+  max-width: 300px;
+}
+
+button.cancelar {
+  min-width: 100px;
+  left: 800px;
+  position: relative;
+
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  width: auto;
+  min-width: 150px;
+  max-width: 300px;
+}
+div.inpts {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  width: auto;
+  min-width: 300px;
+  max-width: 1050px;
+}
+
+.titulo {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Arial Black;
+  font-weight: bold;
+  font-size: 30px;
+  color: #fff;
+  text-shadow: 0 1px 0 rgb(20, 104, 153), 0 2px 0 rgb(11, 56, 114), 0 3px 0 #bbb,
+    0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0, 0, 0, 0.1),
+    0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+    0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+}

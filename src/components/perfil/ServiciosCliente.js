@@ -9,13 +9,15 @@ const ServiciosCliente = () => {
     <>
       <div>
         <ClienteVista />
-        <Link to={"/mi-perfil"}>
+      </div>
+      <div>
+        <Link to={'/mi-perfil'}>
           <h6>Perfil</h6>
         </Link>
+        <>
+          <MisServicios />
+        </>
       </div>
-      <>
-        <MisServicios />
-      </>
     </>
   );
 };

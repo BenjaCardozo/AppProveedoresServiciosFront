@@ -4,6 +4,8 @@ div.servicioCliente{
     justify-content: space-around;
 }
 
+
+
 div.top{
     display: flex;
     align-items: center;
@@ -19,4 +21,33 @@ h6{
 
 button.historial{
     padding: 1px 15px;
+}
+
+@media(max-width:700px)and (min-width:430px){
+    div.servicioCliente{
+        grid-template-columns: 1fr;
+        justify-content: space-around;
+    }
+}
+
+@media(max-width:429px)and (min-width:10px){
+    div.vista{
+        grid-template-columns: 100%;
+    }
+    div.otros{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-content: center;
+    
+    }
+
+    h4{
+        text-align: center;
+    }
+
+    div.calificacion{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-content: center;
+    }
 }

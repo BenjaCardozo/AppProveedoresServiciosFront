@@ -1,11 +1,11 @@
 import "./FotoPerfil.css"
 
-export function FotoPerfil(){
+export function FotoPerfil({props}){
     return<div className="perfil">
         <div className="fotoPerfilProveedor">
         </div>
         <div className="nombre">
-            <h3 className="nombrePerfil">David Garnica</h3>
+            <h3 className="nombrePerfil">{props.nombre}</h3>
         </div>
     </div>
 }

@@ -4,7 +4,7 @@ import { ProveedorVista } from './../components/perfil/ProveedorVista';
 const PerfilProveedor = () => {
   return (
     <>
-        <ProveedorVista/>
+        <ProveedorVista />
     </>
   )
 }

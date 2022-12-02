@@ -1,6 +1,10 @@
-import React from "react";
+import {React, useState} from "react";
 
 function CamposProv() {
+
+  const [descripcion, setDescripcion] = useState('');
+  const [rubro, setRubro] = useState('');
+  const [disponibilidad, setDisponibilidad] = useState('');
   return (
     <div>
       <div className="form-group">
@@ -15,8 +19,10 @@ function CamposProv() {
             <input
               type="text"
               className="form-control"
-              name="name"
+              name="rubro"
+              value={rubro}
               placeholder="ej: Plomero"
+              onChange={({ target }) => setRubro(target.value)}
             />
           </div>
         </div>
@@ -28,6 +34,9 @@ function CamposProv() {
         <textarea
           className="form-control"
           id="exampleFormControlTextarea1"
+          name="descripcion"
+          value={descripcion}
+          onChange={({ target }) => setDescripcion(target.value)}
           rows="3"
         ></textarea>
       </div>
@@ -44,8 +53,10 @@ function CamposProv() {
             <input
               type="text"
               className="form-control"
-              name="name"
-              placeholder="Estoy disponible"
+              name="disponibilidad"
+              value={disponibilidad}
+              placeholder="Estoy disponible"              
+              onChange={({ target }) => setDisponibilidad(target.value)}
             />
           </div>
         </div>

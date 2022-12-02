@@ -18,7 +18,7 @@ div.vista{
 div.otros{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
+    justify-items: center;
 
 }
 
@@ -132,6 +132,9 @@ div.solicitar{
     div.vista{
         grid-template-columns: 100%;
     }
+    div.otros{
+        justify-items: center;
+    }
 }
 
 @media(max-width:429px)and (min-width:10px){
@@ -154,4 +157,17 @@ div.solicitar{
         grid-template-rows: 1fr 1fr 1fr;
         justify-content: center;
     }
+}
+button.agrandar{
+    width: 120px;
+    height: 150px;
+    border: 0;
+    background-color: transparent;
+}
+
+.gasModal{
+    width: 100%;
+}
+.modal-dialog{
+    width: 400px;;
 }

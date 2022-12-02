@@ -19,18 +19,18 @@ console.log(proveedor);
   return (
     <div class="vista">
       <div>
-        <FotoPerfil props={proveedor} />
+        <FotoPerfil/>
         <div className="solicitar">
           <div className="contacto">
             <div className="nombre">
-              <h4 className="profesion">{proveedor.rubro}</h4>
+              <h4 className="profesion"></h4>
             </div>
-            <h6 className="lugar">{proveedor.barrio}</h6>
+            <h6 className="lugar"></h6>
             <h6 className="dato">
               <strong>Contacto</strong>
             </h6>
-            <h6 className="correo dato">{proveedor.correo}</h6>
-            <h6 className="celular dato">{proveedor.contacto}</h6>
+            <h6 className="correo dato"></h6>
+            <h6 className="celular dato"></h6>
           </div>
         </div>
         <div className="solicitar">
@@ -61,9 +61,9 @@ export function AsidePerfil() {
 
             <h4><strong>Servicios</strong></h4>
             <div className="otros">
-                <div className="oficioGas"><img className="gas" src={imagenes.imgGas1} alt="imagen 1"></img></div>
-                <div className="oficioGas"><img className="gas" src={imagenes.imgGas2} alt="imagen 2"></img></div>
-                <div className="oficioGas"><img className="gas" src={imagenes.imgGas3} alt="imagen 3"></img></div>
+                <AgrandarImagen img={imagenes.imgGas1} num="1"/>
+                <AgrandarImagen img={imagenes.imgGas2} num="2"/>
+                <AgrandarImagen img={imagenes.imgGas3} num="3"/>
             </div>
         </div>
 
@@ -144,6 +144,27 @@ export function AsidePerfil() {
       </div>
     </>
   );
+}
+
+const AgrandarImagen = (props) => {
+    console.log(props);
+    return <>
+            <button type="button" class="agrandar" data-bs-toggle="modal" data-bs-target={`#exampleModal${props.num}`}>
+                <div className="oficioGas"><img className="gas" src={props.img} alt={`imagen${props.num}`}></img></div>
+                </button>
+                <div class="modal fade" id={`exampleModal${props.num}`} tabindex="-1" aria-labelledby={`exampleModalLabel${props.num}`} aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="">
+                                <img className="gasModal" src={props.img} alt={`imagen${props.num}`}></img>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </>
 }
 
 /* 

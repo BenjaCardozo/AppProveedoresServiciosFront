@@ -1,10 +1,11 @@
+import { updateImportEqualsDeclaration } from "typescript";
 import "./Feedback.css";
 
 export function Feedback() {
   return (
     <>
       <div id="calificacion">
-        <Perfil />
+        <Perfil props={Cliente} />
         <Comentario />
       </div>
     </>
@@ -12,13 +13,23 @@ export function Feedback() {
 }
 
 export function Perfil() {
+
+  const [Feedbacks, setFeedbacks] = useState([]);
+
+  useEffect(() => {
+    ProveedorServicio.buscarFeedback()
+      .then((data) => setFeedbacks(data))
+      .catch((error) => console.log(error));
+  }, []);
+console.log(Feedbacks);
+
   return (
     <div class="perfil">
       <div class="foto" alt="foto-perfil-usuario"></div>
 
       <div class="nombre">
         <div class="nombre-usuario">
-          <h2>David Garnica</h2>
+          <h2>{Usuario.nombre}</h2>
         </div>
 
         <div class="estrella">

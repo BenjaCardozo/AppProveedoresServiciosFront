@@ -61,9 +61,9 @@ export function AsidePerfil() {
 
             <h4><strong>Servicios</strong></h4>
             <div className="otros">
-                <div className="oficioGas"><img className="gas" src={imagenes.imgGas1} alt="imagen 1"></img></div>
-                <div className="oficioGas"><img className="gas" src={imagenes.imgGas2} alt="imagen 2"></img></div>
-                <div className="oficioGas"><img className="gas" src={imagenes.imgGas3} alt="imagen 3"></img></div>
+                <AgrandarImagen img={imagenes.imgGas1} num="1"/>
+                <AgrandarImagen img={imagenes.imgGas2} num="2"/>
+                <AgrandarImagen img={imagenes.imgGas3} num="3"/>
             </div>
         </div>
 
@@ -78,72 +78,55 @@ export function AsidePerfil() {
             </div>
 
             <div className="progresoGeneral">
-              <div id="num1" className="barra">
-                <h6 className="punto">5</h6>
-                <div class="progress">
-                  <div
-                    class="progress-bar w-5"
-                    role="progressbar"
-                    aria-valuenow="75"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <div id="num2" className="barra">
-                <h6 className="punto">4</h6>
-                <div class="progress">
-                  <div
-                    class="progress-bar w-4"
-                    role="progressbar"
-                    aria-valuenow="75"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <div id="num3" className="barra">
-                <h6 className="punto">3</h6>
-                <div class="progress">
-                  <div
-                    class="progress-bar w-3"
-                    role="progressbar"
-                    aria-valuenow="75"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <div id="num4" className="barra">
-                <h6 className="punto">2</h6>
-                <div class="progress">
-                  <div
-                    class="progress-bar w-2"
-                    role="progressbar"
-                    aria-valuenow="75"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <div id="num5" className="barra">
-                <h6 className="punto">1</h6>
-                <div class="progress">
-                  <div
-                    class="progress-bar w-1"
-                    role="progressbar"
-                    aria-valuenow="75"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
+              <BarraProgreso num="5"/>
+              <BarraProgreso num="4"/>
+              <BarraProgreso num="3"/>
+              <BarraProgreso num="2"/>
+              <BarraProgreso num="1"/>
             </div>
           </div>
         </div>
       </div>
     </>
   );
+}
+
+export function BarraProgreso(props){
+    return<>
+        <div id={`num${props.num}`} className="barra">
+                <h6 className="punto">{props.num}</h6>
+                <div class="progress">
+                  <div
+                    class={`progress-bar w-${props.num}`}
+                    role="progressbar"
+                    aria-valuenow="25"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+        </div>
+    </>
+}
+
+const AgrandarImagen = (props) => {
+    console.log(props);
+    return <>
+            <button type="button" class="agrandar" data-bs-toggle="modal" data-bs-target={`#exampleModal${props.num}`}>
+                <div className="oficioGas"><img className="gas" src={props.img} alt={`imagen${props.num}`}></img></div>
+                </button>
+                <div class="modal fade" id={`exampleModal${props.num}`} tabindex="-1" aria-labelledby={`exampleModalLabel${props.num}`} aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="">
+                                <img className="gasModal" src={props.img} alt={`imagen${props.num}`}></img>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </>
 }
 
 /* 

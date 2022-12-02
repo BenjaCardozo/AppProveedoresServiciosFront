@@ -4,6 +4,8 @@ import { FotoPerfil } from "./FotoPerfil";
 import { Link } from 'react-router-dom';
 
 export function ProveedorVista(){
+
+    
     return<div class="vista">
         <div>
             <FotoPerfil/>

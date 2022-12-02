@@ -5,14 +5,22 @@ export default class Principal extends Component {
   constructor(props) {
     super(props);
     this.state = { proveedores: [] };
+    this.state = { clientes: [] };
   }
   render() {
     return (
-      <div>
-        <main>
+      <>
+          <div className="fondo">
+          <br />
+          <br />
+          <h2 className="titulo1">Explora</h2>
+        
+          <br />
+          <hr />
           <Cards />
-        </main>
-      </div>
+          
+          </div>
+      </>
     );
   }
 }

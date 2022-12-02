@@ -17,14 +17,14 @@ export const Cards = () => {
   const cardList = proveedores.map((p) => <Card proveedor={p} key={p.id} />);
 
   return (
-    <div>
-      <div className="album py-5 bg-light">
-        <div className="container">
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+    <>
+      <div >
+        <div >
+          <div className="card">
             {cardList}
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };

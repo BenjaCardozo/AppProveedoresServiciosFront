@@ -1,6 +1,5 @@
 import React from "react";
 import "./ContactoConProveedor.css";
-import { useEffect } from "react";
 
 
 const ContactoConElProveedor = () => {
@@ -24,7 +23,7 @@ const ContactoConElProveedor = () => {
 
   return (
     <>
-      <main>
+      <main className="main">
         <div className="body">
           <h1 className="titulo">
             <strong>Solicitar Trabajo</strong>

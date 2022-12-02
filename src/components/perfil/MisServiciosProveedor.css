@@ -1,0 +1,57 @@
+div.serviciosProveedor{
+    display: grid;
+    grid-template-columns: 35% 65%;
+    justify-content: space-around;
+}
+
+.btn-group {
+    display: flex;
+    margin-top: 5%;
+}
+.botonVentanas{
+    margin-right: 3%;
+    width: 180px;
+    display: flex;
+}
+
+.botonVentanas .btn{
+    width: 100%;
+}
+div.display-none{
+    display: none;
+}
+div.display-block{
+    display: block;
+}
+
+
+@media(max-width:740px)and (min-width:500px){
+    div.serviciosProveedor{
+        grid-template-columns: 1fr;
+        justify-content: space-around;
+    }
+    .btn-group {
+        display: flex;
+        margin-top: 5%;
+        justify-content: space-around;
+    }
+    .botonVentanas{
+        margin-right: 0;
+        width: 130px;
+    }
+}
+
+@media(max-width:499px)and (min-width:10px){
+    div.serviciosProveedor{
+        grid-template-columns: 1fr;
+    }
+    .btn-group {
+        display: grid;
+        margin-top: 5%;
+        grid-template-rows: 3fr;
+        justify-content: space-around;
+    }
+    .botonVentanas{
+        margin-top: 10px;
+    }
+    }

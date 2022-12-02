@@ -19,18 +19,18 @@ console.log(proveedor);
   return (
     <div class="vista">
       <div>
-        <FotoPerfil/>
+        <FotoPerfil props={proveedor} />
         <div className="solicitar">
           <div className="contacto">
             <div className="nombre">
-              <h4 className="profesion"></h4>
+              <h4 className="profesion">{proveedor.rubro}</h4>
             </div>
-            <h6 className="lugar"></h6>
+            <h6 className="lugar">{proveedor.barrio}</h6>
             <h6 className="dato">
               <strong>Contacto</strong>
             </h6>
-            <h6 className="correo dato"></h6>
-            <h6 className="celular dato"></h6>
+            <h6 className="correo dato">{proveedor.correo}</h6>
+            <h6 className="celular dato">{proveedor.contacto}</h6>
           </div>
         </div>
         <div className="solicitar">
@@ -78,72 +78,34 @@ export function AsidePerfil() {
             </div>
 
             <div className="progresoGeneral">
-              <div id="num1" className="barra">
-                <h6 className="punto">5</h6>
-                <div class="progress">
-                  <div
-                    class="progress-bar w-5"
-                    role="progressbar"
-                    aria-valuenow="75"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <div id="num2" className="barra">
-                <h6 className="punto">4</h6>
-                <div class="progress">
-                  <div
-                    class="progress-bar w-4"
-                    role="progressbar"
-                    aria-valuenow="75"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <div id="num3" className="barra">
-                <h6 className="punto">3</h6>
-                <div class="progress">
-                  <div
-                    class="progress-bar w-3"
-                    role="progressbar"
-                    aria-valuenow="75"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <div id="num4" className="barra">
-                <h6 className="punto">2</h6>
-                <div class="progress">
-                  <div
-                    class="progress-bar w-2"
-                    role="progressbar"
-                    aria-valuenow="75"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-              <div id="num5" className="barra">
-                <h6 className="punto">1</h6>
-                <div class="progress">
-                  <div
-                    class="progress-bar w-1"
-                    role="progressbar"
-                    aria-valuenow="75"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
+              <BarraProgreso num="5"/>
+              <BarraProgreso num="4"/>
+              <BarraProgreso num="3"/>
+              <BarraProgreso num="2"/>
+              <BarraProgreso num="1"/>
             </div>
           </div>
         </div>
       </div>
     </>
   );
+}
+
+export function BarraProgreso(props){
+    return<>
+        <div id={`num${props.num}`} className="barra">
+                <h6 className="punto">{props.num}</h6>
+                <div class="progress">
+                  <div
+                    class={`progress-bar w-${props.num}`}
+                    role="progressbar"
+                    aria-valuenow="25"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+        </div>
+    </>
 }
 
 const AgrandarImagen = (props) => {

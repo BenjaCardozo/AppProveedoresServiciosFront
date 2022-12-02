@@ -1,0 +1,18 @@
+div.Cliente{
+    display: grid;
+    grid-template-columns: 35% 65%;
+    justify-content: space-around;
+}
+
+.datosPerfil{
+    /* width: auto;
+    margin-right:30px; */
+    display: flex;
+    align-items: center;
+    margin-top: 5%;
+    margin-right: 10%;
+    margin-left: 15%;
+    margin-bottom: 5%;
+}
+
+

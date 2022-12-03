@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { FotoPerfil } from "../components/navbar/Nav";
+import { FotoPerfil } from "../components/perfil/FotoPerfil";
 import ClienteServicio from "../services/Cliente";
 import './PerfilCliente.css';
 

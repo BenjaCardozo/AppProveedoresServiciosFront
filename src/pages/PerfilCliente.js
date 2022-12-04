@@ -45,7 +45,7 @@ const PerfilCliente = () => {
                 type="text"
                 class="form-control"
                 id="firstName"
-                placeholder=""
+                placeholder="Nombre"
                 value=""
                 required
               />
@@ -61,7 +61,7 @@ const PerfilCliente = () => {
                   type="text"
                   class="form-control"
                   id="username"
-                  placeholder="{cliente.nombre}"
+                  placeholder="Apellido"
                   required
                 />
                 <div class="invalid-feedback">Your username is required.</div>
@@ -76,7 +76,7 @@ const PerfilCliente = () => {
                 type="text"
                 class="form-control"
                 id="address"
-                placeholder="{cliente.direccion}"
+                placeholder="Direccion"
                 required
               />
             </div>
@@ -89,7 +89,7 @@ const PerfilCliente = () => {
                 type="email"
                 class="form-control"
                 id="email"
-                placeholder="{cliente.email}"
+                placeholder="Email"
               />
               <div class="invalid-feedback">
                 PorFavor ingresa una Direccion valida.
@@ -104,7 +104,7 @@ const PerfilCliente = () => {
                 type="text"
                 class="form-control"
                 id="lastName"
-                placeholder="{cliente.contacto}"
+                placeholder="Contacto"
                 value=""
                 required
               />

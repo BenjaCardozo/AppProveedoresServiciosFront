@@ -1,3 +1,4 @@
+import Proveedor from "../../services/Proveedor";
 import { FotoPerfil } from "./FotoPerfil";
 import "./MisServiciosProveedor.css";
 import { AsidePerfil } from "./ProveedorVista";
@@ -10,7 +11,7 @@ export function MisServiciosProveedor(){
     return<>
         <div className="serviciosProveedor">
             <div>
-                <FotoPerfil/>
+                <FotoPerfil props={Proveedor}/>
             </div>
             <div>
                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">

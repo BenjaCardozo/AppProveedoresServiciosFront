@@ -21,7 +21,22 @@ import { MisServiciosProveedor } from "./components/perfil/MisServiciosProveedor
 
 export function App() {
   return (
-    <PerfilCliente/>
+    <BrowserRouter>
+    <NavBar />
+    <Routes>
+      <Route path="/" element={<Principal />} />
+      <Route path="/login" element={< LogIn />} />
+      <Route path="/registro" element={<Seleccionar />} />
+      <Route path="/registro/:rol" element={<Registro />} />
+      <Route path="/contacto-proveedor" element={<ContactoConElProveedor />}/>
+      <Route path="/mis-servicios" element={ <ServiciosCliente/> } />
+      <Route path="/mi-perfil" element={ <PerfilCliente/> } />
+      <Route path="/perfil-proveedor" element={ <PerfilProveedor />} />
+      <Route path="/administrar-proveedores" element={<AdministrarProveedores />} />
+      <Route path="*" element={<PaginaNoEncontrada />} />
+    </Routes>
+    <Footer />
+  </BrowserRouter>
   );
 }
 

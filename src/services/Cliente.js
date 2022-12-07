@@ -1,17 +1,25 @@
 import { API_PROVEEDORES_SERVICIOS } from "../constants/Api.constant";
 
+async function revisarError(response) {
+  if (!response.ok) {
+    let error = await response.json();
+    throw error.messages;
+  }
+}
+
 class ClienteServicio {
-  async crearCliente(data, token) {
+  async crearCliente(data) {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.CLIENTE(), {
       method: "post",
-      headers: { Authorization: `Bearer ${token}` },
       body: data,
     });
+    revisarError(response);
     return response.json();
   }
 
   async listarClientes() {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.CLIENTE());
+    revisarError(response);
     return response.json();
   }
 
@@ -21,11 +29,13 @@ class ClienteServicio {
       headers: { Authorization: `Bearer ${token}` },
       body: data,
     });
+    revisarError(response);
     return response.json();
   }
 
   async buscarCliente(id) {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.CLIENTE_BY_ID(id));
+    revisarError(response);
     return response.json();
   }
 
@@ -34,6 +44,7 @@ class ClienteServicio {
       method: "delete",
       headers: { Authorization: `Bearer ${token}` },
     });
+    revisarError(response);
     return response.json();
   }
 
@@ -42,6 +53,7 @@ class ClienteServicio {
       method: "patch",
       headers: { Authorization: `Bearer ${token}` },
     });
+    revisarError(response);
     return response.json();
   }
 
@@ -50,6 +62,7 @@ class ClienteServicio {
       method: "patch",
       headers: { Authorization: `Bearer ${token}` },
     });
+    revisarError(response);
     return response.json();
   }
 
@@ -57,6 +70,7 @@ class ClienteServicio {
     const response = await fetch(
       API_PROVEEDORES_SERVICIOS.CLIENTE_BY_BARRIO(barrio)
     );
+    revisarError(response);
     return response.json();
   }
 }

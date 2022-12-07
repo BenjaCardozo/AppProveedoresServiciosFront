@@ -7,9 +7,9 @@ async function revisarError(response) {
   }
 }
 
-class TrabajoServicio {
-  async crearTrabajo(data, token) {
-    const response = await fetch(API_PROVEEDORES_SERVICIOS.TRABAJO(), {
+class SolicitudTrabajoServicio {
+  async crearSolicitudTrabajo(data, token) {
+    const response = await fetch(API_PROVEEDORES_SERVICIOS.SOLICITUD_TRABAJO(), {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -21,29 +21,29 @@ class TrabajoServicio {
     return response.json();
   }
 
-  async listarTrabajos() {
-    const response = await fetch(API_PROVEEDORES_SERVICIOS.TRABAJO());
+  async listarSolicitudesTrabajo() {
+    const response = await fetch(API_PROVEEDORES_SERVICIOS.SOLICITUD_TRABAJO());
     revisarError(response)
     return response.json();
   }
 
-  async terminarTrabajo(data, token, id) {
-    const response = await fetch(API_PROVEEDORES_SERVICIOS.TRABAJO_BY_ID(id), {
+  /* async terminarSolicitudTrabajo(data, token, id) {
+    const response = await fetch(API_PROVEEDORES_SERVICIOS.SOLICITUD_TRABAJO_BY_ID4(id), {
       method: "put",
       headers: { Authorization: `Bearer ${token}` },
     });
     revisarError(response)
     return response.json();
-  }
+  } */
 
-  async buscarTrabajo(id) {
-    const response = await fetch(API_PROVEEDORES_SERVICIOS.TRABAJO_BY_ID(id));
+  async buscarSolicitudTrabajo(id) {
+    const response = await fetch(API_PROVEEDORES_SERVICIOS.SOLICITUD_TRABAJO_BY_ID(id));
     revisarError(response)
     return response.json();
   }
 
   async eliminarTrabajo(id, token) {
-    const response = await fetch(API_PROVEEDORES_SERVICIOS.TRABAJO_BY_ID(id), {
+    const response = await fetch(API_PROVEEDORES_SERVICIOS.SOLICITUD_TRABAJO_BY_ID(id), {
       method: "delete",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -51,7 +51,7 @@ class TrabajoServicio {
     return response.json();
   }
 
-  async bajaTrabajo(id, token) {
+  /* async bajaTrabajo(id, token) {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.TRABAJO_BAJA(id), {
       method: "patch",
       headers: { Authorization: `Bearer ${token}` },
@@ -67,9 +67,9 @@ class TrabajoServicio {
     });
     revisarError(response)
     return response.json();
-  }
+  } */
 
-  async listarTrabajosPorProveedor(id) {
+  async listarSolicitudesTrabajoPorProveedor(id) {
     const response = await fetch(
       API_PROVEEDORES_SERVICIOS.TRABAJO_BY_PROVEEDOR(id)
     );
@@ -78,4 +78,4 @@ class TrabajoServicio {
   }
 }
 
-export default new TrabajoServicio();
+export default new SolicitudTrabajoServicio();

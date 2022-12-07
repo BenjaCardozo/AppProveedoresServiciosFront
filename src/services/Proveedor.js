@@ -2,12 +2,12 @@ import { API_PROVEEDORES_SERVICIOS } from "../constants/Api.constant";
 
 let token = null;
 
-async function revisarError(response) {
+/* async function revisarError(response) {
   if (!response.ok) {
     let error = await response.json();
     throw error.messages;
   }
-}
+} */
 
 class ProveedorServicio {
   setToken = (newToken) => {
@@ -19,13 +19,21 @@ class ProveedorServicio {
       method: "post",
       body: data,
     });
-    revisarError(response)
+    /* revisarError(response) */
+    if (!response.ok) {
+      let error = await response.json();
+      throw error.messages;
+    }
     return response.json();
   }
 
   async listarProveedores() {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.PROVEEDOR());
-    revisarError(response)
+    /* revisarError(response) */
+    if (!response.ok) {
+      let error = await response.json();
+      throw error.messages;
+    }
     return response.json();
   }
 
@@ -38,13 +46,21 @@ class ProveedorServicio {
         body: data,
       }
     );
-    revisarError(response)
+    /* revisarError(response) */
+    if (!response.ok) {
+      let error = await response.json();
+      throw error.messages;
+    }
     return response.json();
   }
 
   async buscarProveedor(id) {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.PROVEEDOR_BY_ID(id));
-    revisarError(response)
+    /* revisarError(response) */
+    if (!response.ok) {
+      let error = await response.json();
+      throw error.messages;
+    }
     return response.json();
   }
 
@@ -56,7 +72,11 @@ class ProveedorServicio {
         headers: { Authorization: token },
       }
     );
-    revisarError(response)
+    /* revisarError(response) */
+    if (!response.ok) {
+      let error = await response.json();
+      throw error.messages;
+    }
     return response.json();
   }
 
@@ -65,7 +85,11 @@ class ProveedorServicio {
       method: "patch",
       headers: { Authorization: token },
     });
-    revisarError(response)
+    /* revisarError(response) */
+    if (!response.ok) {
+      let error = await response.json();
+      throw error.messages;
+    }
     return response.json();
   }
 
@@ -74,7 +98,11 @@ class ProveedorServicio {
       method: "patch",
       headers: { Authorization: token },
     });
-    revisarError(response)
+    /* revisarError(response) */
+    if (!response.ok) {
+      let error = await response.json();
+      throw error.messages;
+    }
     return response.json();
   }
 
@@ -82,7 +110,11 @@ class ProveedorServicio {
     const response = await fetch(
       API_PROVEEDORES_SERVICIOS.PROVEEDOR_BY_BARRIO(barrio)
     );
-    revisarError(response)
+    /* revisarError(response) */
+    if (!response.ok) {
+      let error = await response.json();
+      throw error.messages;
+    }
     return response.json();
   }
 
@@ -93,7 +125,11 @@ class ProveedorServicio {
         method: "patch",
       }
     );
-    revisarError(response)
+    /* revisarError(response) */
+    if (!response.ok) {
+    let error = await response.json();
+    throw error.messages;
+  }
     return response.json();
   }
 }

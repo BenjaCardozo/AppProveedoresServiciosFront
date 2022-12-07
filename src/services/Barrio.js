@@ -1,16 +1,20 @@
 import { API_PROVEEDORES_SERVICIOS } from "../constants/Api.constant";
 
-async function revisarError(response) {
+/* async function revisarError(response) {
   if (!response.ok) {
     let error = await response.json();
     throw error.messages;
   }
-}
+} */
 
 class BarrioServicio {
   async listarBarrios() {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.BARRIO());
-    revisarError(response);
+    //revisarError(response);
+    if (!response.ok) {
+      let error = await response.json();
+      throw error.messages;
+    }
     return response.json();
   }
 }

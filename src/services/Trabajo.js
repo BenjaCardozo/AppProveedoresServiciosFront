@@ -1,71 +1,104 @@
 import { API_PROVEEDORES_SERVICIOS } from "../constants/Api.constant";
 
-async function revisarError(response) {
+/* async function revisarError(response) {
   if (!response.ok) {
     let error = await response.json();
     throw error.messages;
   }
-}
+} */
+let token = null;
 
 class TrabajoServicio {
-  async crearTrabajo(data, token) {
+  setToken = (newToken) => {
+    token = `Bearer ${newToken}`;
+  };
+
+  async crearTrabajo(data) {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.TRABAJO(), {
       method: "post",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+        Authorization: token,
       },
       body: JSON.stringify(data),
     });
-    revisarError(response)
+    /* revisarError(response) */
+    if (!response.ok) {
+      let error = await response.json();
+      throw error.messages;
+    }
     return response.json();
   }
 
   async listarTrabajos() {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.TRABAJO());
-    revisarError(response)
+    /* revisarError(response) */
+    if (!response.ok) {
+      let error = await response.json();
+      throw error.messages;
+    }
     return response.json();
   }
 
-  async terminarTrabajo(data, token, id) {
+  async terminarTrabajo(id) {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.TRABAJO_BY_ID(id), {
       method: "put",
-      headers: { Authorization: `Bearer ${token}` },
+      headers: { Authorization: token },
     });
-    revisarError(response)
+    /* revisarError(response) */
+    if (!response.ok) {
+      let error = await response.json();
+      throw error.messages;
+    }
     return response.json();
   }
 
   async buscarTrabajo(id) {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.TRABAJO_BY_ID(id));
-    revisarError(response)
+    /* revisarError(response) */
+    if (!response.ok) {
+      let error = await response.json();
+      throw error.messages;
+    }
     return response.json();
   }
 
-  async eliminarTrabajo(id, token) {
+  async eliminarTrabajo(id) {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.TRABAJO_BY_ID(id), {
       method: "delete",
-      headers: { Authorization: `Bearer ${token}` },
+      headers: { Authorization: token },
     });
-    revisarError(response)
+    /* revisarError(response) */
+    if (!response.ok) {
+      let error = await response.json();
+      throw error.messages;
+    }
     return response.json();
   }
 
-  async bajaTrabajo(id, token) {
+  async bajaTrabajo(id) {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.TRABAJO_BAJA(id), {
       method: "patch",
-      headers: { Authorization: `Bearer ${token}` },
+      headers: { Authorization: token },
     });
-    revisarError(response)
+    /* revisarError(response) */
+    if (!response.ok) {
+      let error = await response.json();
+      throw error.messages;
+    }
     return response.json();
   }
 
-  async altaTrabajo(id, token) {
+  async altaTrabajo(id) {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.TRABAJO_ALTA(id), {
       method: "patch",
-      headers: { Authorization: `Bearer ${token}` },
+      headers: { Authorization: token },
     });
-    revisarError(response)
+    /* revisarError(response) */
+    if (!response.ok) {
+      let error = await response.json();
+      throw error.messages;
+    }
     return response.json();
   }
 
@@ -73,7 +106,11 @@ class TrabajoServicio {
     const response = await fetch(
       API_PROVEEDORES_SERVICIOS.TRABAJO_BY_PROVEEDOR(id)
     );
-    revisarError(response)
+    /* revisarError(response) */
+    if (!response.ok) {
+      let error = await response.json();
+      throw error.messages;
+    }
     return response.json();
   }
 }

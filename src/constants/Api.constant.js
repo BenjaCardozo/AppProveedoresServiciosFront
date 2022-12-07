@@ -49,13 +49,23 @@ export const API_PROVEEDORES_SERVICIOS = {
     return `${this.URL}/moderador/alta/${id}`;
   },
 
+  SOLICITUD_TRABAJO: function () {
+    return `${this.URL}/strabajo`;
+  },
+  SOLICITUD_TRABAJO_BY_ID: function (id) {
+    return `${this.URL}/strabajo/${id}`;
+  },
+  SOLICITUD_TRABAJO_BY_PROVEEDOR: function (id) {
+    return `${this.URL}/strabajo/${id}`;
+  },
+
   TRABAJO: function () {
     return `${this.URL}/trabajo`;
   },
   TRABAJO_BY_ID: function (id) {
     return `${this.URL}/trabajo/${id}`;
   },
-  TRABAJO_PROVEEDOR: function (id) {
+  TRABAJO_BY_PROVEEDOR: function (id) {
     return `${this.URL}/trabajo/proveedor/${id}`;
   },
   TRABAJO_BAJA: function (id) {
@@ -77,7 +87,25 @@ export const API_PROVEEDORES_SERVICIOS = {
   },
 
   FOTO: function (id) {
+    //DEVUELVE LA FOTO DEL USUARIO POR SU ID
     return `${this.URL}/foto/usuario/${id}`;
+  },
+  FOTO_FPROVEEDOR: function (id) {
+    //DEVULVE LA FOTO DEL SERVICIO PROVEEDOR
+    return `${this.URL}/foto/fproveedor/${id}`;
+  },
+
+  FOTO_PROVEEDOR: function () {
+    //CREA UN FOTO_PROVEEDOR
+    return `${this.URL}/fproveedor`;
+  },
+  FOTO_PROVEEDOR_BY_ID: function (id) {
+    //ACTUALIZAR FOTO_PROVEEDOR
+    return `${this.URL}/fproveedor/${id}`;
+  },
+  FOTO_PROVEEDOR_BY_PROVEEDOR: function (id) {
+    //LISTA LAS FOTOS_PROVEEDOR POR PROVEEDOR
+    return `${this.URL}/fproveedor/proveedor/${id}`;
   },
 
   LOGIN: function () {

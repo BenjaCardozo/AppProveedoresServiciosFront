@@ -1,5 +1,12 @@
 import { API_PROVEEDORES_SERVICIOS } from "../constants/Api.constant";
 
+async function revisarError(response) {
+  if (!response.ok) {
+    let error = await response.json();
+    throw error.messages;
+  }
+}
+
 class ModeradorServicio {
   async crearModerador(data, token) {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.MODERADOR(), {

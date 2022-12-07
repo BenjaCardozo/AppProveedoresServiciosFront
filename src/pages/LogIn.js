@@ -20,14 +20,16 @@ function LogIn() {
       .then((data) => {
         localStorage.setItem("loggedAppUser", JSON.stringify(data));
         console.log(data);
+        navigate("/");
       })
-      .catch((error) => setMessageError(error));
-
-    navigate("/");
+      .catch((error) => {
+        alert(error);
+        console.log(error);
+      });
   };
 
   return (
-    <form onSubmit={handleLoginSubmit} className='form'>
+    <form onSubmit={handleLoginSubmit} className="form">
       <h2 align="center" className="titulo">
         Log In
       </h2>
@@ -76,9 +78,9 @@ function LogIn() {
         </span>
       </div>
       <br />
-      <h5 align="center">No Tienes cuenta? <Link to={`/registro`}>
-        Registrate
-      </Link></h5>
+      <h5 align="center">
+        No Tienes cuenta? <Link to={`/registro`}>Registrate</Link>
+      </h5>
     </form>
   );
 }

@@ -1,36 +1,32 @@
 import { Buscador } from "./Buscador";
 import "./Nav.css";
-import { Children, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import LogIn from "./../../pages/LogIn";
-import ClienteServicio from "../../services/Cliente.js";
 
 export function Nav() {
   const [session, setSession] = useState(null);
 
   useEffect(() => {
-    const loggedUserJSON = localStorage.getItem("loggedAppUser");
+    const loggedUserJSON = localStorage.getItem("session");
     if (loggedUserJSON) {
       const user = JSON.parse(loggedUserJSON);
       setSession(user);
     }
   }, []);
- 
+
   return (
     <div>
       <nav id="navegador">
         <Logo />
         <Buscador />
         {session ? (
-          
-          <Perfil setSession={setSession}/>
-          
+          <Perfil setSession={setSession} session={session} />
         ) : (
           <div className="iniciarRegistrar">
             <Link to={`/login`}>
               <button type="button">Iniciar Sessión</button>
             </Link>
-            <br/>
+            <br />
             <Link to={`/registro`}>
               <button type="button">Registrate</button>
             </Link>
@@ -41,53 +37,14 @@ export function Nav() {
   );
 }
 
-export function Perfil() {
+export function Perfil({ session, setSession }) {
   const handleLogout = () => {
-    //SetSession(null);
-    localStorage.removeItem("loggedAppUser");
+    setSession(null);
+    localStorage.removeItem("session");
+    localStorage.removeItem("tokenSession");
   };
 
-  const [session, setSession] = useState(null);
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    const loggedUserJSON = localStorage.getItem("loggedAppUser");
-    if (loggedUserJSON) {
-      const user = JSON.parse(loggedUserJSON);
-      setSession(user);
-    }
-  }, []);
-/* 
-  useEffect(() => {
-    const loggedUserJSON = localStorage.getItem("loggedAppUser");
-    if (loggedUserJSON) {
-      const user = JSON.parse(loggedUserJSON);
-      setUser(user);
-    }
-  }, []);
-
-  console.log(session); */
-
-  /* if(user.rol == "PROVEEDOR"){
-    console.log(user.id)
-    console.log(user.rol)
-    
-  } */
-
- 
-function obtenerNombre() {
-    var nombre = document.getElementById("nombre");
-    nombre.innerTHML=`<div id="nombre">${clientes.nombre}</div>`;
-    nombre.removeChild(nombre);
-  };
-
-  const [clientes, setClientes] = useState([]);
-  let id;
-  useEffect(() => {
-      ClienteServicio.buscarCliente(id)
-      .then((data) => setClientes(data.clientes))
-      .catch((error) => console.log(error));
-  }, []);
+  /* document.getElementById("nombre").innerHTML = "HOLA"; */
 
   return (
     <div>
@@ -100,12 +57,12 @@ function obtenerNombre() {
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <FotoPerfil clientes/>
-            {/* <div id="nombre">{clientes.nombre}</div> */}
+            <FotoPerfil />
+            <div id="nombre"></div>
           </button>
           <ul className="dropdown-menu">
             <li>
-              <Link to={'/mi-perfil'} className="dropdown-item" >
+              <Link to={"/mi-perfil"} className="dropdown-item">
                 Perfil
               </Link>
             </li>
@@ -129,19 +86,19 @@ function obtenerNombre() {
   );
 }
 
-export function FotoPerfil(clientes) {
-  return <div className="foto" alt="foto-perfil-usuario">{clientes.foto}</div>;
+export function FotoPerfil() {
+  return <div className="foto" alt="foto-perfil-usuario"></div>;
 }
 
 export function Logo() {
   return (
     <div class="appLogo">
-      <a
-        href="/"
+      <Link
+        to={"/"}
         class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
       >
         <img className="bi App-logo" height="32" src="TuProfesional.png"></img>
-      </a>
+      </Link>
     </div>
   );
 }

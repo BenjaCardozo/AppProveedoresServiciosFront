@@ -1,11 +1,11 @@
 import { API_PROVEEDORES_SERVICIOS } from "../constants/Api.constant";
 
-async function revisarError(response) {
+/* async function revisarError(response) {
   if (!response.ok) {
     let error = await response.json();
     throw error.messages;
   }
-}
+} */
 
 class FotoProveedorServicio {
   async crearFotoProveedor(data) {
@@ -13,7 +13,11 @@ class FotoProveedorServicio {
       method: "post",
       body: data,
     });
-    revisarError(response);
+    /* revisarError(response); */
+    if (!response.ok) {
+      let error = await response.json();
+      throw error.messages;
+    }
     return response.json();
   }
 
@@ -22,13 +26,21 @@ class FotoProveedorServicio {
       method: "put",
       body: data,
     });
-    revisarError(response);
+    /* revisarError(response); */
+    if (!response.ok) {
+      let error = await response.json();
+      throw error.messages;
+    }
     return response.json();
   }
 
   async listarFotosProveedorPorProveedor(id) {
     const response = await fetch(API_PROVEEDORES_SERVICIOS.FOTO_PROVEEDOR_BY_PROVEEDOR(id));
-    revisarError(response)
+    /* revisarError(response) */
+    if (!response.ok) {
+      let error = await response.json();
+      throw error.messages;
+    }
     return response.json();
   }
 }

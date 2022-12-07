@@ -1,6 +1,10 @@
 export const API_PROVEEDORES_SERVICIOS = {
   URL: "http://localhost:8080",
 
+  ADMIN_BY_ID: function (id) {
+    return `${this.URL}/admin/${id}`;
+  },
+
   PROVEEDOR: function () {
     return `${this.URL}/proveedor`;
   },

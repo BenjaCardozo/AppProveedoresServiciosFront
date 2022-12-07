@@ -2,6 +2,10 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import loginServicio from "../services/Login";
+import clienteServicio from "../services/Cliente";
+import proveedorServicio from "../services/Proveedor";
+import moderadorServicio from "../services/Moderador";
+import adminServicio from "../services/Admin";
 import "./Login.css";
 
 function LogIn() {
@@ -9,6 +13,38 @@ function LogIn() {
   const [password, SetPassword] = useState("");
   const [messageError, setMessageError] = useState("");
   const navigate = useNavigate();
+
+  const revisarRol = (data) => {
+    switch (data.rol) {
+      case "PROVEEDOR":
+        proveedorServicio
+          .buscarProveedor(data.id)
+          .then((user) => localStorage.setItem("session", JSON.stringify(user)))
+          .catch((error) => alert(error));
+        break;
+      case "CLIENTE":
+        clienteServicio
+          .buscarCliente(data.id)
+          .then((user) => localStorage.setItem("session", JSON.stringify(user)))
+          .catch((error) => alert(error));
+        break;
+      case "ADMIN":
+        adminServicio.setToken(data.token);
+        adminServicio
+          .buscarAdmin(data.id)
+          .then((user) => localStorage.setItem("session", JSON.stringify(user)))
+          .catch((error) => alert(error));
+        break;
+      case "MODERADOR":
+        moderadorServicio
+          .buscarModerador(data.id)
+          .then((user) => localStorage.setItem("session", JSON.stringify(user)))
+          .catch((error) => alert(error));
+        break;
+      default:
+        throw new Error("algo salio mal.");
+    }
+  };
 
   const handleLoginSubmit = (event) => {
     event.preventDefault();
@@ -18,7 +54,8 @@ function LogIn() {
         clave: password,
       })
       .then((data) => {
-        localStorage.setItem("loggedAppUser", JSON.stringify(data));
+        localStorage.setItem("tokenSession", JSON.stringify(data));
+        revisarRol(data);
         console.log(data);
         navigate("/");
       })

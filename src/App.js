@@ -11,7 +11,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import Registro from "./components/registro/Registro";
 import Seleccionar from "./pages/Seleccionar";
 import LogIn from "./pages/LogIn";
-import AdministrarProveedores from "./pages/AdministrarProveedores";
+import AdministrarProveedores from "./pages/AdministrarProv";
 import ContactoConElProveedor from "./components/perfil/ContactoConElProveedor";
 import ServiciosCliente from "./components/perfil/ServiciosCliente";
 import PerfilCliente from './pages/PerfilCliente';

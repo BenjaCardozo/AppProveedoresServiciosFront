@@ -5,34 +5,53 @@ import { Link } from "react-router-dom";
 
 export function Nav() {
   const [session, setSession] = useState(null);
+  const [loggedUserJSON, setLoggedUserJSON] = useState(null);
+  /* const [panel,setPanel] = useState(undefined) */
 
   useEffect(() => {
-    const loggedUserJSON = localStorage.getItem("session");
-    if (loggedUserJSON) {
+    setLoggedUserJSON(localStorage.getItem("session"));
+    if (loggedUserJSON != null) {
       const user = JSON.parse(loggedUserJSON);
       setSession(user);
     }
-  }, []);
+
+    /* setPanel(()=>{
+      if(session){
+        return <Perfil/>
+      }
+      return <loginRegistro/>
+    }) */
+    
+  }, [loggedUserJSON]);
 
   return (
     <div>
       <nav id="navegador">
         <Logo />
         <Buscador />
-        {session ? (
+        {/* <panel/> */}
+        {/* {session ? (
           <Perfil setSession={setSession} session={session} />
         ) : (
-          <div className="iniciarRegistrar">
-            <Link to={`/login`}>
-              <button type="button">Iniciar Sessión</button>
-            </Link>
-            <br />
-            <Link to={`/registro`}>
-              <button type="button">Registrate</button>
-            </Link>
-          </div>
-        )}
+          <loginRegistro />
+        )} */}
       </nav>
+    </div>
+  );
+}
+
+export function loginRegistro() {
+  return (
+    <div>
+      <div className="iniciarRegistrar">
+        <Link to={`/login`}>
+          <button type="button">Iniciar Sessión</button>
+        </Link>
+        <br />
+        <Link to={`/registro`}>
+          <button type="button">Registrate</button>
+        </Link>
+      </div>
     </div>
   );
 }

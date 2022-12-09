@@ -14,7 +14,7 @@ function LogIn() {
   const [messageError, setMessageError] = useState("");
   const navigate = useNavigate();
 
-  const revisarRol = (data) => {
+  const revisarRol = async (data) => {
     switch (data.rol) {
       case "PROVEEDOR":
         proveedorServicio
@@ -58,11 +58,13 @@ function LogIn() {
         revisarRol(data);
         console.log(data);
         navigate("/");
+        //window.location.reload(false);
       })
       .catch((error) => {
         alert(error);
         console.log(error);
       });
+      //window.location.reload(false);
   };
 
   return (

@@ -2,11 +2,11 @@ import { Buscador } from "./Buscador";
 import "./Nav.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import fotoServicio from "../../services/Foto";
 
 export function Nav() {
   const [session, setSession] = useState(null);
   const [loggedUserJSON, setLoggedUserJSON] = useState(null);
-  /* const [panel,setPanel] = useState(undefined) */
 
   useEffect(() => {
     setLoggedUserJSON(localStorage.getItem("session"));
@@ -14,14 +14,6 @@ export function Nav() {
       const user = JSON.parse(loggedUserJSON);
       setSession(user);
     }
-
-    /* setPanel(()=>{
-      if(session){
-        return <Perfil/>
-      }
-      return <loginRegistro/>
-    }) */
-    
   }, [loggedUserJSON]);
 
   return (
@@ -29,18 +21,18 @@ export function Nav() {
       <nav id="navegador">
         <Logo />
         <Buscador />
-        {/* <panel/> */}
-        {/* {session ? (
+        {/* <Panel/> */}
+        {session != null ? (
           <Perfil setSession={setSession} session={session} />
         ) : (
-          <loginRegistro />
-        )} */}
+          <LoginRegistro />
+        )}
       </nav>
     </div>
   );
 }
 
-export function loginRegistro() {
+export function LoginRegistro() {
   return (
     <div>
       <div className="iniciarRegistrar">
@@ -63,7 +55,10 @@ export function Perfil({ session, setSession }) {
     localStorage.removeItem("tokenSession");
   };
 
-  /* document.getElementById("nombre").innerHTML = "HOLA"; */
+  let nombre = null;
+  useEffect(() => {
+    nombre = document.getElementById("nombre").innerHTML = session.nombre;
+  });
 
   return (
     <div>
@@ -76,8 +71,8 @@ export function Perfil({ session, setSession }) {
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <FotoPerfil />
-            <div id="nombre"></div>
+            <FotoPerfil idUsuario={session.id} />
+            <div id="nombre">{nombre}</div>
           </button>
           <ul className="dropdown-menu">
             <li>
@@ -105,8 +100,30 @@ export function Perfil({ session, setSession }) {
   );
 }
 
-export function FotoPerfil() {
-  return <div className="foto" alt="foto-perfil-usuario"></div>;
+export function FotoPerfil({ idUsuario }) {
+  /* let foto = `http://localhost/foto/usuario/${idUsuario}`; */
+  let id=idUsuario;
+  let foto = null;
+
+  useEffect(() => {
+    fotoServicio
+      .buscarFotoUsuario(id)
+      .then((f) => {
+        console.log(f);
+        foto = f.url;
+        console.log(foto);
+      })
+      .catch((error) => {
+        alert(error);
+        console.log(error);
+      });
+  });
+
+  return (
+    <div /* className="foto" alt="foto-perfil-usuario" */>
+      <img src={foto} />
+    </div>
+  );
 }
 
 export function Logo() {

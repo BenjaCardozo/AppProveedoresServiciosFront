@@ -15,7 +15,7 @@ class FotoServicio {
       let error = await response.json();
       throw error.messages;
     }
-    return response;
+    return response.blob();
   }
 
   async buscarFotoProveedorServicio(id) {
@@ -25,7 +25,7 @@ class FotoServicio {
       let error = await response.json();
       throw error.messages;
     }
-    return response;
+    return response.blob();
   }
 }
 

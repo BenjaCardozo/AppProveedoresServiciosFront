@@ -101,17 +101,16 @@ export function Perfil({ session, setSession }) {
 }
 
 export function FotoPerfil({ idUsuario }) {
-  /* let foto = `http://localhost/foto/usuario/${idUsuario}`; */
-  let id=idUsuario;
-  let foto = null;
+  const myImage = document.querySelector("img");//AQUI BUSCO LA TAG IMG Y LA ASIGNO A UNA VARIBLE
 
   useEffect(() => {
     fotoServicio
-      .buscarFotoUsuario(id)
+      .buscarFotoUsuario(idUsuario)
       .then((f) => {
-        console.log(f);
-        foto = f.url;
-        console.log(foto);
+        //console.log(f);
+        const foto = URL.createObjectURL(f);//ESTO LO CONVIERTE F EN UNA DIRECCION PARA EL SRC
+        //console.log(foto);
+        myImage.src = foto;//AQUI LO SETEO AL SRC
       })
       .catch((error) => {
         alert(error);
@@ -120,8 +119,8 @@ export function FotoPerfil({ idUsuario }) {
   });
 
   return (
-    <div /* className="foto" alt="foto-perfil-usuario" */>
-      <img src={foto} />
+    <div className="foto" alt="foto-perfil-usuario">
+      <img />{/* AQUI ESTA LA IMAGEN SE VE, PERO ESTA MAL POSICIONADA */}
     </div>
   );
 }

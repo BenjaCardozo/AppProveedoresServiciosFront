@@ -1,6 +1,10 @@
 import { useParams, Link } from "react-router-dom";
 import "./Registro.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import proveedorServicio from '../../services/Proveedor'
+import clienteServicio from '../../services/Cliente'
+import barrioServicio from '../../services/Barrio'
+import imgDef from '../../img/default.jpg'
 
 function RegistroForm() {
   const { rol } = useParams();
@@ -9,11 +13,44 @@ function RegistroForm() {
   const [barrio, setBarrio] = useState("");
   const [clave, setClave] = useState("");
   const [clave2, setClave2] = useState("");
-  const [foto, setFoto] = useState("");
   const [contacto, setContacto] = useState("");
+
   const [rubro, setRubro] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [disponibilidad, setDisponibilidad] = useState("");
+
+  const [barrios, setBarrios] = useState([]);
+  useEffect(()=>{
+    barrioServicio.listarBarrios()
+    .then ((data) => setBarrios(data.barrios))
+  }, [barrios])
+
+  const handleSubmit = (event)=>{
+    event.preventDefault()
+    const formData = new FormData();
+    const fileField = document.querySelector('input[type="file"]')
+    if (rol == 'proveedor'){
+      formData.append('nombre', nombre)
+      formData.append('correo', correo)
+      formData.append('clave', clave)
+      formData.append('clave2', clave2)
+      formData.append('barrio', barrio)
+      if (fileField.files[0] != null){
+        formData.append('foto', fileField.files[0])
+      }else{
+        formData.append('foto', imgDef)
+      }
+      formData.append('contacto', contacto)
+      formData.append('descripcion', descripcion)
+      formData.append('rubro', rubro)
+      formData.append('disponibilidad', disponibilidad)
+      proveedorServicio.crearProveedor(formData)
+      .then( () => alert('registro existoso'))
+      .catch( (error)=> alert(error))
+    }
+  }
+
+  const listarBarrios = barrios.map((b) => <option key={b}>{b.toString()}</option>)
 
   return (
     <div className="body">
@@ -22,7 +59,8 @@ function RegistroForm() {
           <div className="card registro">
             <div className="card-header ">Registro {rol}</div>
             <div className="card-body">
-              <form className="form row gy-2 gx-3 align-items-center">
+              <form className="form row gy-2 gx-3 align-items-center" 
+              onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label htmlFor="name" className="cols-sm-2 control-label">
                     Nombre
@@ -74,11 +112,11 @@ function RegistroForm() {
                       <select
                         className="form-select form-select-sm"
                         aria-label=".form-select-sm example"
+                        onChange={(e) => setBarrio(e.target.value)}
+                        value={barrio}
                       >
-                        <option selected>Elegir un barrio</option>
-                        <option value="1">Barrio 1</option>
-                        <option value="2">Barrio 2</option>
-                        <option value="3">Barrio 3</option>
+                        <option>Seleccionar un barrio</option>
+                        {listarBarrios}
                       </select>
                     </div>
                   </div>
@@ -90,8 +128,6 @@ function RegistroForm() {
                   <input
                     className="form-control form-control-sm"
                     id="formFileSm"
-                    onChange={(e) => setFoto(e.target.value)}
-                    value={foto}
                     type="file"
                   />
                 </div>
@@ -135,7 +171,7 @@ function RegistroForm() {
                     </div>
                   </div>
                 </div>
-                {rol == "proveedor" ? <CamposProv /> : <></>}
+                {rol == "proveedor" ? <CamposProv rubro={rubro} setRubro={setRubro} descripcion={descripcion} setDescripcion={setDescripcion} disponibilidad={disponibilidad} setDisponibilidad={setDisponibilidad} /> : <></>}
 
                 <div className="form-group">
                   <label htmlFor="name" className="cols-sm-2 control-label">
@@ -178,8 +214,8 @@ function RegistroForm() {
   );
 }
 
-function CamposProv() {
-  
+function CamposProv({rubro, setRubro, disponibilidad, setDisponibilidad, descripcion, setDescripcion}) {
+
   return (
     <div>
       <div className="form-group">
@@ -194,7 +230,8 @@ function CamposProv() {
             <input
               type="text"
               className="form-control"
-              name="name"
+              onChange={(e) => setRubro(e.target.value)}
+              value={rubro}
               placeholder="ej: Plomero"
             />
           </div>
@@ -210,6 +247,8 @@ function CamposProv() {
         <textarea
           className="form-control"
           id="exampleFormControlTextarea1"
+          onChange={(e) => setDescripcion(e.target.value)}
+          value={descripcion}
           rows="3"
         ></textarea>
       </div>
@@ -226,7 +265,8 @@ function CamposProv() {
             <input
               type="text"
               className="form-control"
-              name="name"
+              onChange={(e) => setDisponibilidad(e.target.value)}
+              value={disponibilidad}
               placeholder="Estoy disponible"
             />
           </div>

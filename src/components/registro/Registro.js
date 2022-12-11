@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import proveedorServicio from '../../services/Proveedor'
 import clienteServicio from '../../services/Cliente'
 import barrioServicio from '../../services/Barrio'
-import imgDef from '../../img/default.jpg'
 
 function RegistroForm() {
   const { rol } = useParams();
@@ -37,8 +36,6 @@ function RegistroForm() {
       formData.append('barrio', barrio)
       if (fileField.files[0] != null){
         formData.append('foto', fileField.files[0])
-      }else{
-        formData.append('foto', imgDef)
       }
       formData.append('contacto', contacto)
       formData.append('descripcion', descripcion)

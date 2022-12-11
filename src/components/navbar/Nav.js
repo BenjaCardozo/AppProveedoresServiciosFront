@@ -113,10 +113,11 @@ export function FotoPerfil({ idUsuario }) {
         myImage.src = foto;//AQUI LO SETEO AL SRC
       })
       .catch((error) => {
-        alert(error);
+        myImage.src="default.jpg"//SI NO TIENE FOTO MUESTRO UNA POR DEFAULT
+        //alert(error);
         console.log(error);
       });
-  });
+  },[]);
 
   return (
     <div className="foto" alt="foto-perfil-usuario">

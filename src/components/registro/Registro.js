@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import "./Registro.css";
 import { useState, useEffect } from "react";
 import proveedorServicio from '../../services/Proveedor'
@@ -18,6 +18,8 @@ function RegistroForm() {
   const [descripcion, setDescripcion] = useState("");
   const [disponibilidad, setDisponibilidad] = useState("");
 
+  const navigate = useNavigate();
+
   const [barrios, setBarrios] = useState([]);
   useEffect(()=>{
     barrioServicio.listarBarrios()
@@ -34,16 +36,25 @@ function RegistroForm() {
       formData.append('clave', clave)
       formData.append('clave2', clave2)
       formData.append('barrio', barrio)
-      if (fileField.files[0] != null){
-        formData.append('foto', fileField.files[0])
-      }
+      formData.append('foto', fileField.files[0])
       formData.append('contacto', contacto)
       formData.append('descripcion', descripcion)
       formData.append('rubro', rubro)
       formData.append('disponibilidad', disponibilidad)
       proveedorServicio.crearProveedor(formData)
-      .then( () => alert('registro existoso'))
-      .catch( (error)=> alert(error))
+      .then( () => {navigate("/login");})
+      .catch( (error) => console.log(error))
+    } else {
+      formData.append('nombre', nombre)
+      formData.append('correo', correo)
+      formData.append('clave', clave)
+      formData.append('clave2', clave2)
+      formData.append('barrio', barrio)
+      formData.append('foto', fileField.files[0])
+      formData.append('contacto', contacto)
+      clienteServicio.crearCliente(formData)
+      .then(  () => {navigate("/login");})
+      .catch( (error) => console.log(error))
     }
   }
 

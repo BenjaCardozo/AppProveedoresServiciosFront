@@ -12,7 +12,7 @@ export const Cards = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  console.log(proveedores);
+  // console.log(proveedores);
 
   const cardList = proveedores.map((p) => <Card proveedor={p} key={p.id} />);
 

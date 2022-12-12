@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Card.css";
-import FotoServicio from "./../../../services/Foto.js";
+import FotoServicio from "./../../../services/Foto";
 
 export const Card = ({ proveedor }) => {
-  var foto =
-    FotoServicio.buscarFotoUsuario(proveedor.id) == null
-      ? "default.jpg"
-      : "default.jpg";
+  //const myImage = document.querySelector("#img-card");
+
+  const [foto, setFoto] = useState("");
 
   FotoServicio.buscarFotoUsuario(proveedor.id)
-    .then((img) => console.log(img))
-    .catch((error) => console.log(error));
+    .then((f) => {
+      setFoto(URL.createObjectURL(f))
+    })
+    .catch((error) => {
+      setFoto("default.jpg")
+      console.log(error);
+    });
 
   var estrellas = "⭐";
   for (let i = 1; i < proveedor.promedioFeedback; i++) {

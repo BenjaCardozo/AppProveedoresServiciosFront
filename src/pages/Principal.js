@@ -10,7 +10,7 @@ export default class Principal extends Component {
     return (
       <div>
         <main>
-          {/* <Cards /> */}
+          <Cards />
         </main>
       </div>
     );

@@ -1,9 +1,9 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import "./Registro.css";
 import { useState, useEffect } from "react";
-import proveedorServicio from '../../services/Proveedor'
-import clienteServicio from '../../services/Cliente'
-import barrioServicio from '../../services/Barrio'
+import proveedorServicio from "../../services/Proveedor";
+import clienteServicio from "../../services/Cliente";
+import barrioServicio from "../../services/Barrio";
 
 function RegistroForm() {
   const { rol } = useParams();
@@ -18,57 +18,88 @@ function RegistroForm() {
   const [descripcion, setDescripcion] = useState("");
   const [disponibilidad, setDisponibilidad] = useState("");
 
+  const [errorMessage, setErrorMessage] = useState("");
+
   const navigate = useNavigate();
 
   const [barrios, setBarrios] = useState([]);
-  useEffect(()=>{
-    barrioServicio.listarBarrios()
-    .then ((data) => setBarrios(data.barrios))
-  }, [barrios])
+  useEffect(() => {
+    barrioServicio.listarBarrios().then((data) => setBarrios(data.barrios));
+  }, [barrios]);
 
-  const handleSubmit = (event)=>{
-    event.preventDefault()
-    const formData = new FormData();
-    const fileField = document.querySelector('input[type="file"]')
-    if (rol == 'proveedor'){
-      formData.append('nombre', nombre)
-      formData.append('correo', correo)
-      formData.append('clave', clave)
-      formData.append('clave2', clave2)
-      formData.append('barrio', barrio)
-      formData.append('foto', fileField.files[0])
-      formData.append('contacto', contacto)
-      formData.append('descripcion', descripcion)
-      formData.append('rubro', rubro)
-      formData.append('disponibilidad', disponibilidad)
-      proveedorServicio.crearProveedor(formData)
-      .then( () => {navigate("/login");})
-      .catch( (error) => console.log(error))
-    } else {
-      formData.append('nombre', nombre)
-      formData.append('correo', correo)
-      formData.append('clave', clave)
-      formData.append('clave2', clave2)
-      formData.append('barrio', barrio)
-      formData.append('foto', fileField.files[0])
-      formData.append('contacto', contacto)
-      clienteServicio.crearCliente(formData)
-      .then(  () => {navigate("/login");})
-      .catch( (error) => console.log(error))
-    }
+  const Errores = ({error})=>{
+    const errorList = error.map((e) => <div key={e.index}>{e}</div>)
+
+    return(
+      <div className="alert alert-danger" role="alert">
+        {errorList}
+      </div>
+    )
   }
 
-  const listarBarrios = barrios.map((b) => <option key={b}>{b.toString()}</option>)
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    const fileField = document.querySelector('input[type="file"]');
+    if (rol == "proveedor") {
+      formData.append("nombre", nombre);
+      formData.append("correo", correo);
+      formData.append("clave", clave);
+      formData.append("clave2", clave2);
+      formData.append("barrio", barrio);
+      if(fileField.files[0]){
+        formData.append("foto", fileField.files[0]);
+      }
+      formData.append("contacto", contacto);
+      formData.append("descripcion", descripcion);
+      formData.append("rubro", rubro);
+      formData.append("disponibilidad", disponibilidad);
+      proveedorServicio
+        .crearProveedor(formData)
+        .then(() => {
+          navigate("/login");
+        })
+        .catch((error) => {
+          setErrorMessage(error)
+        });
+    } else {
+      formData.append("nombre", nombre);
+      formData.append("correo", correo);
+      formData.append("clave", clave);
+      formData.append("clave2", clave2);
+      formData.append("barrio", barrio);
+      if(fileField.files[0]){
+        formData.append("foto", fileField.files[0]);
+      }
+      formData.append("contacto", contacto);
+      clienteServicio
+        .crearCliente(formData)
+        .then(() => {
+          navigate("/login");
+        })
+        .catch((error) => {
+          setErrorMessage(error)
+          //console.log(error);
+        });
+    }
+  };
+
+  const listarBarrios = barrios.map((b) => (
+    <option key={b}>{b.toString()}</option>
+  ));
 
   return (
     <div className="body">
+      {errorMessage ? <Errores error={errorMessage} /> : <div></div>}
       <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="card registro">
             <div className="card-header ">Registro {rol}</div>
             <div className="card-body">
-              <form className="form row gy-2 gx-3 align-items-center" 
-              onSubmit={handleSubmit}>
+              <form
+                className="form row gy-2 gx-3 align-items-center"
+                onSubmit={handleSubmit}
+              >
                 <div className="form-group">
                   <label htmlFor="name" className="cols-sm-2 control-label">
                     Nombre
@@ -179,7 +210,18 @@ function RegistroForm() {
                     </div>
                   </div>
                 </div>
-                {rol == "proveedor" ? <CamposProv rubro={rubro} setRubro={setRubro} descripcion={descripcion} setDescripcion={setDescripcion} disponibilidad={disponibilidad} setDisponibilidad={setDisponibilidad} /> : <></>}
+                {rol == "proveedor" ? (
+                  <CamposProv
+                    rubro={rubro}
+                    setRubro={setRubro}
+                    descripcion={descripcion}
+                    setDescripcion={setDescripcion}
+                    disponibilidad={disponibilidad}
+                    setDisponibilidad={setDisponibilidad}
+                  />
+                ) : (
+                  <></>
+                )}
 
                 <div className="form-group">
                   <label htmlFor="name" className="cols-sm-2 control-label">
@@ -222,8 +264,14 @@ function RegistroForm() {
   );
 }
 
-function CamposProv({rubro, setRubro, disponibilidad, setDisponibilidad, descripcion, setDescripcion}) {
-
+function CamposProv({
+  rubro,
+  setRubro,
+  disponibilidad,
+  setDisponibilidad,
+  descripcion,
+  setDescripcion,
+}) {
   return (
     <div>
       <div className="form-group">

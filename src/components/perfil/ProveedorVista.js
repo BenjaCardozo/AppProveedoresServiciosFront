@@ -11,7 +11,7 @@ export function ProveedorVista() {
   const [proveedor, setProveedor] = useState([]);
 
   useEffect(() => {
-    ProveedorServicio.buscarProveedor(2)
+    ProveedorServicio.buscarProveedor(3)
       .then((data) => setProveedor(data))
       .catch((error) => console.log(error));
   }, []);
